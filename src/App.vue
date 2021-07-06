@@ -7,7 +7,6 @@
  					 box-shadow: 0px 4px 10px 0px rgba(0, 64, 128, .2);"
 					 class="el-menu-demo"
 					 mode="horizontal"
-					 active-text-color="#FFBA14"
 					 @select="handleSelect">
 
 				<!--				logo-->
@@ -24,7 +23,7 @@
 				</el-menu-item>
 
 				<!--				点击 弹出 登录面板-->
-				<el-button type="text" @click="centerDialogVisible = true">{{ username }}</el-button>
+				<div class="loginBotton" type="text" @click="centerDialogVisible = true">{{ username }}</div>
 
 			</el-menu>
 
@@ -67,7 +66,31 @@
 
 
 <style>
+body {
+	/*
+	使用 el-dialog 弹窗，会导致body 产生 padding-right: 17px;
+	*/
+	padding-right: 0 !important;
+}
+/*
+点击 登录 按钮
+*/
+.loginBotton {
+	line-height: 46px;
+	cursor: pointer;
+	float: right;
+	position: relative;
+	color: red;
+	right: 20px;
+	/*font-weight: bold;*/
+}
+.loginBotton:hover {
+	color: #FFBA14;
+}
 
+	/*
+	登录 弹窗
+	*/
 .el-dialog {
 	display: flex;
 	flex-direction: column;

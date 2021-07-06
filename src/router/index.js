@@ -5,7 +5,6 @@ import Travel from "../views/travel/Travel";
 import Date from "../views/date/Date";
 import Item from "../views/item/Item";
 import About from "../views/about/About";
-import Login from "../views/model/Login";
 
 // 踏行子页面
 /*广西*/
@@ -80,15 +79,6 @@ const routes = [
 			title: '关于'
 		},
 		component: About,
-		show: true
-	},
-	{
-		path: '/login',
-		name: '登录',
-		meta: {
-			title: '登录'
-		},
-		component: Login,
 		show: true
 	},
 
