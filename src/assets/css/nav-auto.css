@@ -1,0 +1,426 @@
+@charset "utf-8";
+
+/* 暂时放置此css */
+
+#loginHtml {
+    /* 实现全屏自适应渐进色 */
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-image: linear-gradient(135deg, rgba(152, 122, 222, 1) 0%, rgba(45, 215, 204, 1) 100%);
+}
+
+
+/* 登录面板 */
+
+#loginHtml #loginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px;
+    height: 380px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 41px 41px 6px #224a61, -41px -41px 6px #88ffff;
+}
+
+
+/* 登录面板的标题字 */
+
+#loginHtml .loginTitle {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#loginHtml form>span {
+    display: block;
+}
+
+
+/* 输入框 */
+
+#loginHtml input {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    background-color: transparent;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+#loginHtml .login:focus {
+    border: 1px solid #55b9f3;
+}
+
+
+/* 账号框 */
+
+#loginHtml .username {
+    margin-top: 30px;
+    /* margin-bottom: 20px; */
+}
+
+
+/* 验证码区域 */
+
+#loginHtml .itCode {
+    width: 100%;
+    height: 30px;
+    /* background-color: red; */
+}
+
+
+/* 验证码 */
+
+#loginHtml .itCode .img {
+    width: 120px;
+    height: inherit;
+    background-color: blue;
+    float: left;
+}
+
+
+/* 验证码框 */
+
+#loginHtml .input-itCode {
+    width: 180px;
+    height: inherit;
+    margin: 0 auto;
+    float: right;
+}
+
+#loginHtml .input-itCode>input {
+    width: inherit;
+    height: inherit;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#loginHtml button {
+    width: 100%;
+    height: 40px;
+    margin-top: 50px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #88ffff;
+}
+
+#loginHtml button:hover {
+    background-color: #22ffff;
+    color: #fff;
+}
+
+
+/* CSS Document */
+
+
+/*PC*/
+
+@media screen and (min-width: 500px) {
+    .header {
+        width: 100%;
+        height: 46px;
+        font-weight: 550;
+        background: #fff;
+        /* box-shadow: 0px 2px 4px 0px rgba(0, 64, 128, .2); */
+        box-shadow: 0px 4px 10px 0px rgba(0, 64, 128, .2);
+    }
+    .logo {
+        width: 112px;
+        height: 46px;
+        margin-left: 20px;
+        margin-right: 10px;
+        float: left;
+        display: block;
+        cursor: pointer;
+    }
+    .logo img {
+        height: 100%;
+    }
+    .dropbtn {
+        display: none;
+    }
+    .ul {
+        width: auto;
+        height: 46px;
+        line-height: 46px;
+        text-align: center;
+        padding: 0px 6px;
+        display: block;
+        float: left;
+    }
+    .ul:hover {
+        color: rgb(255, 186, 20);
+        display: block;
+        background: #EBEBEB;
+    }
+    .ul>.nav-line {
+        width: 70%;
+        height: 4px;
+        margin-top: -3.4px;
+        position: relative;
+        left: 15%;
+        box-sizing: border-box;
+        display: block;
+    }
+    .nav-line {
+        float: left;
+    }
+    /*定义当前页面的导航栏的样式*/
+    .index .nav #index .nav-line,
+    .travel-index .nav #demo1 .nav-line,
+    .data-index .nav #demo2 .nav-line,
+    .item-index .nav #demo3 .nav-line,
+    .about-index .nav #demo4 .nav-line {
+        border-bottom: 4px solid #F40505;
+    }
+    .old-blog {
+        /*
+		line-height: 46px;
+		color: #959595;
+		cursor: default;
+*/
+        /*
+		margin-right: 20px;
+		float: right;
+*/
+        position: absolute;
+        top: 0;
+        left: 71.6%;
+    }
+    /* 登录/退出 */
+    .login-frame {
+        float: left;
+        height: 46px;
+        line-height: 46px;
+        /* width: 120px; */
+        /* background-color: red; */
+        position: absolute;
+        right: 20px;
+        padding: 0px 10px;
+        cursor: default;
+    }
+    .login-frame span {
+        color: rgb(161, 161, 161);
+        display: block;
+        float: left;
+    }
+    .login-frame a {
+        display: block;
+        cursor: pointer;
+        float: left;
+        padding: 0 10px;
+    }
+    .login-frame a:hover {
+        background: #EBEBEB;
+    }
+    #login {
+        color: rgb(255, 186, 20);
+    }
+    #logout {
+        color: red;
+    }
+    /*返回顶部按钮*/
+    #myBtn {
+        width: 40px;
+        height: 40px;
+        display: none;
+        position: fixed;
+        bottom: 150px;
+        right: 20px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        /*background:;
+        url(https://gitee.com/ZRX001/gallery/raw/master/gallery/back-top.png) no-repeat;
+        */
+        background: url('../img/back-top.svg') no-repeat;
+        background-size: 100%;
+    }
+    #myBtn:hover {
+        /* background: url(https://gitee.com/ZRX001/gallery/raw/master/gallery/back-top-hover.png) no-repeat; */
+        background: url('../img/back-top-hover.svg') no-repeat;
+        background-size: 100%;
+    }
+}
+
+
+/*Moblie*/
+
+@media all and (max-width: 501px) {
+    .header {
+        width: 100%;
+        height: 46px;
+        font-weight: 550;
+        background: #ffffff;
+        box-shadow: 0px 2px 4px 0px rgba(0, 64, 128, .2);
+    }
+    .logo {
+        width: 112px;
+        height: 46px;
+        margin-left: 5px;
+        float: left;
+    }
+    .logo img {
+        height: 100%;
+    }
+    #dropdown {
+        float: right;
+    }
+    .dropbtn {
+        width: 46px;
+        height: 46px;
+        /* background: url(../img/menu.png) no-repeat center; */
+        background: url('../img/menu.svg') no-repeat center;
+        background-size: 70% auto;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    /*为实现点击切换图标预留
+	.dropbtn:hover {
+		width: 40px;
+		height: 46px;
+		background: url(../img/2.png) no-repeat center;
+		font-size: 16px;
+		cursor: pointer;
+	}
+	*/
+    .dropdown {
+        position: relative;
+        z-index: 30;
+    }
+    /*
+	菜单面板大小
+	*/
+    .dropdown-content {
+        width: 200px;
+        /* overflow: auto; */
+        background-color: #ffffff;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        top: 46px;
+        right: 0px;
+        position: absolute;
+        display: none;
+        border-radius: 0px 0px 0px 10px;
+        -webkit-border-radius: 0px 0px 0px 10px;
+        -moz-border-radius: 0px 0px 0px 10px;
+        -ms-border-radius: 0px 0px 0px 10px;
+        -o-border-radius: 0px 0px 0px 10px;
+    }
+    .dropdown-content a {
+        color: black;
+        margin: 7px 0px;
+        padding: 2px 10px;
+        text-decoration: none;
+        background: #F7F7F7;
+        display: block;
+    }
+    .dropdown a:hover {
+        background-color: #C1C1C1;
+    }
+    .show {
+        display: block;
+    }
+    .old-blog {
+        position: absolute;
+        top: 0;
+        right: 100%;
+        width: 68px;
+    }
+    /* 登录/退出 */
+    .login-frame {
+        float: left;
+        width: 100%;
+        height: 40px;
+        position: relative;
+        /* position: relative;
+        right: 0px; */
+        /* padding: 0px 10px; */
+        /* cursor: default;
+        box-sizing: border-box; */
+    }
+    .login-frame span {
+        color: rgb(161, 161, 161);
+        display: block;
+        float: left;
+        margin: 0 23px;
+        line-height: 46px;
+    }
+    .login-frame a {
+        display: block;
+        cursor: pointer;
+        float: left;
+        padding: 0 20px;
+        box-sizing: border-box;
+        line-height: 32px;
+    }
+    .login-frame a:hover {
+        background: #EBEBEB;
+    }
+    #login {
+        position: absolute;
+        left: 0;
+        /* float: left; */
+        color: rgb(255, 186, 20);
+        border-radius: 0px 10px 0px 10px;
+        -webkit-border-radius: 0px 10px 0px 10px;
+        -moz-border-radius: 0px 10px 0px 10px;
+        -ms-border-radius: 0px 10px 0px 10px;
+        -o-border-radius: 0px 10px 0px 10px;
+    }
+    #logout {
+        position: absolute;
+        right: 0;
+        /* float: right; */
+        color: red;
+        border-radius: 10px 0px 0px 0px;
+        -webkit-border-radius: 10px 0px 0px 0px;
+        -moz-border-radius: 10px 0px 0px 0px;
+        -ms-border-radius: 10px 0px 0px 0px;
+        -o-border-radius: 10px 0px 0px 0px;
+    }
+    /*
+	返回顶部按钮
+	*/
+    #myBtn {
+        width: 36px;
+        height: 36px;
+        display: none;
+        position: fixed;
+        bottom: 64px;
+        right: 20px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px;
+        /*background:;
+        url(https://gitee.com/ZRX001/gallery/raw/master/gallery/back-top-hover.png) no-repeat;
+        */
+        background: url('../img/back-top-hover.svg') no-repeat;
+        background-size: 100%;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+}

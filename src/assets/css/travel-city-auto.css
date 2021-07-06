@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+/*--↓--首府（首都）以外首字母顺序进行排序--↓--*/
+
+/*定义首都、省会的第一个字符样式*/
+.travel-left {
+	width: 850px;
+	margin: 0 auto;
+	margin-top: 2px;
+}
+
+#provincial-capital img {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 4px;
+	padding-right: 2px;
+}
+
+
+/*定义城市的div大小*/
+
+a .cityDiv:hover {
+	color: rgb(255, 186, 20);
+	background: #36A3FF;
+}
+
+.cityDiv {
+	height: 28px;
+	width: auto;
+	line-height: 27px;
+	text-align: center;
+	padding: 1px 7px;
+	border-radius: 5px;
+	margin: 12px 12px 12px 0px;
+	background: #72E500;
+	float: left;
+	/*margin-left: -90px;*/
+}
+
+/*
+第一个cityDiv
+*/
+.nav-city>div>a:first-child .cityDiv {
+	/*background: yellow;*/
+	margin-left: -12px;
+}
+.nav-city>div>a:first-child .cityDiv div {
+	background: url("https://gitee.com/ZRX001/gallery/raw/master/gallery/park.png");
+	background-size: 28px;
+	width: 28px;
+	height: 28px;
+	margin-left: -2px;
+	float: left;
+	/*display: block;*/
+
+}
+
+.cityDiv p {
+	width: 20px;
+}
+
+
+.travel-right {
+	clear: both;
+}
+
+@media screen and (min-width: 960px) {
+    .main {
+        width: 100%;
+    }
+    .article {
+        width: 850px;
+        margin: 0 auto;
+        margin-top: 5px;
+        text-align: justify;
+        padding: 12px;
+        border-radius: 5px;
+        background: #ffffff;
+        margin-bottom: 12px;
+        box-shadow: 0px 0px 3px #8D8D8D;
+    }
+    .article-location p {
+        font-size: 30px;
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+    .article-img img {
+        width: 100%;
+    }
+    .article-text {
+        width: 100%;
+        padding: 10px inherit;
+        text-indent: 2rem;
+        text-align: justify;
+    }
+    .rememberBlock {
+        width: 850px;
+        display: inline-block;
+    }
+    .rememberBlock-l {
+        width: 422.5px;
+        margin-top: 5px;
+        float: left;
+    }
+    .rememberBlock-r {
+        width: 422.5px;
+        margin-top: 5px;
+        float: right;
+    }
+    .rememberBlock-l img {
+        width: 100%;
+        height: 100%;
+        float: left;
+    }
+    .rememberBlock-r img {
+        width: 100%;
+        height: 100%;
+        float: right;
+    }
+}
+
+@media all and (max-width: 959px) {
+    .main {
+        width: 100%;
+        margin: 0px auto;
+    }
+    .article {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 5px;
+        text-align: justify;
+        padding: 0px 12px;
+        background: #ffffff;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .article-location p {
+        font-size: 30px;
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+    .article-img img {
+        width: 100%;
+    }
+    .article-text {
+        width: 100%;
+        padding: 0px 0px 6px 0px;
+        line-height: 26px;
+        text-indent: 2rem;
+        text-align: justify;
+    }
+    .article-text p:last-child {
+        padding-bottom: 10px;
+    }
+    .rememberBlock {
+        width: 100%;
+        display: inline-block;
+    }
+    .rememberBlock-l {
+        width: 49.5%;
+        height: 60%;
+        margin-top: 1%;
+        float: left;
+        clear: both;
+    }
+    .rememberBlock-r {
+        width: 49.5%;
+        height: 60%;
+        margin-top: 1%;
+        float: right;
+    }
+    .rememberBlock-l img {
+        width: 100%;
+        height: 100%;
+        float: left;
+    }
+    .rememberBlock-r img {
+        width: 100%;
+        height: 100%;
+        float: right;
+    }
+}

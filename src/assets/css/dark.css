@@ -1,0 +1,185 @@
+@charset "utf-8";
+/* CSS Document */
+/*暗黑模式*/
+
+@media all and (max-width: 501px) and (prefers-color-scheme: dark) {
+	/*
+全模块（ 通用 ）
+*/
+	.header {
+		background-color: #343434;
+	}
+
+	body,
+	#myDropdown,
+	.data-classify-right,
+	.travel-right .article,
+	table {
+		background-color: #444 !important;
+		color: #e4e4e4 !important;
+	}
+
+	.article table {
+		background: #AEA8A8 !important;
+	}
+
+	.article table th,
+	table tr {
+		background-color: #555555 !important;
+	}
+
+	#myDropdown a {
+		background-color: #343434;
+	}
+
+	/*给图片添加一层蒙版*/
+	.article .dark-img {
+		background: #000 !important;
+		padding-bottom: 0px !important;
+	}
+
+	.article img {
+		opacity: 0.6 !important;
+		filter: alpha(opacity=60) !important;
+		width: 100%;
+		/*		margin-bottom: -3.6px;*/
+		margin-bottom: -1.2%;
+	}
+
+	#myBtn {
+		opacity: 0.6;
+		filter: alpha(opacity=60);
+	}
+
+	footer {
+		background: #4C4C4C;
+	}
+
+	footer p,
+	footer a {
+		color: #9E9E9E;
+	}
+
+	/*
+踏行模块
+*/
+	.travel-left .cityDiv {
+		background: #3E7C00;
+	}
+
+	.travel-right hr {
+		clear: both;
+		margin: 15px 0;
+		height: 0px;
+		overflow: hidden;
+		border: none;
+		background: transparent;
+		border-bottom: 4px solid #1E212D;
+		padding: 0;
+	}
+
+	/*
+资料模块
+*/
+	.data-right .line-left,
+	.data-classify-right .line-left {
+		background-color: #8C0000;
+	}
+
+	.data-right .information {
+		-webkit-filter: brightness(2.3);
+		/* Safari and Chrome */
+		-moz-filter: brightness(2.3);
+		/* Firefox  */
+		-o-filter: brightness(2.3);
+		/* Opera */
+		filter: brightness(2.3);
+	}
+
+	.data-classify-right .article hr {
+		clear: both;
+		margin: 15px 0;
+		height: 0px;
+		overflow: hidden;
+		border: none;
+		background: transparent;
+		border-bottom: 4px solid #1E212D;
+		padding: 0;
+	}
+
+	/* .data-right .article pre,
+.data-classify-right .article pre {
+	background: #323232;
+	border: 1px solid #312C2C;
+} */
+	.data-right .article button,
+	.data-classify-right .article button {
+		background: #748835;
+		color: #A90000;
+	}
+
+	.data-right .data-plate {
+		background-color: #3F3F3F;
+	}
+
+	/*资料方块*/
+	/*1*/
+	.information1 {
+		background: #846A07;
+	}
+
+	.information2 {
+		background: #966600;
+	}
+
+	.information3 {
+		background: #597520;
+	}
+
+	/*2*/
+	.information4 {
+		background: #680F03;
+	}
+
+	.information5 {
+		background: #76340D;
+	}
+
+	.information6 {
+		background: #3D2148;
+	}
+
+	/*3*/
+	.information7 {
+		background: #104F63;
+	}
+
+	.information8 {
+		background: #6C0F2C;
+	}
+
+	.information9 {
+		background: #554404;
+	}
+
+	/* 代码块-暗黑模式 */
+	/* 无效---原因未知 */
+	/* @import url('../css/prism-dark.css'); */
+	.data-classify-left {
+		background-color: #747474 !important;
+	}
+
+	#app-catalog {
+		background-color: #747474 !important;
+	}
+
+	.catalog {
+		background-color: #494949 !important;
+		color: white;
+	}
+
+	.catalog p,
+	.catalog .chapter {
+		color: white;
+	}
+}

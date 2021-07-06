@@ -1,0 +1,525 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/*
+box-shadow: 0 8px 16px 0 rgba(7, 17, 27, .05); 初始
+box-shadow: 0 2px 4px 1px rgba(165, 162, 162, 0.568);
+border-radius: 12px;
+color: rgb(38, 42, 44);
+font-size: 14px/1.5;
+font-family: '宋体';
+*/
+
+
+/* PC版 */
+
+@media all and (min-width: 960px) {
+	#Date .main {
+		width: 90%;
+		margin: 0px auto;
+		margin-top: 40px;
+		/* margin-bottom: 8px; */
+		display: grid;
+		grid-template-columns: minmax(20%, 240px) 1fr;
+		/* grid-template-columns: 240px 1fr; */
+		gap: 12px;
+		box-sizing: border-box;
+	}
+
+	/*
+	左半边位置
+	*/
+	/* 资料 */
+	.itemize {
+		width: 100%;
+		background-color: white;
+		box-sizing: border-box;
+		box-shadow: 0 2px 4px 1px rgba(165, 162, 162, 0.568);
+		border-radius: 22px;
+		-webkit-border-radius: 22px;
+		-moz-border-radius: 22px;
+		-ms-border-radius: 22px;
+		-o-border-radius: 22px;
+		/* 为了实现距离一致 */
+		padding-bottom: 4px;
+	}
+
+	/* 资料大标题 */
+	.data-text {
+		width: 100%;
+		font-weight: bold;
+		padding-top: 12px;
+		padding-bottom: 6px;
+		cursor: default;
+	}
+
+	.data-text-content {
+		margin: 0px auto;
+		text-align: center;
+		height: 18px;
+		line-height: 18px;
+		font-size: 18px;
+	}
+
+	/* 资料大标题icon */
+	.data-text-content > img {
+		height: 20px;
+		position: relative;
+		top: 4px;
+	}
+
+	/* 资料模块 */
+	.itemize > div:nth-of-type(n+2) {
+		margin-top: 16px;
+		cursor: default;
+	}
+
+	/* 资料小标题 */
+	.itemize > div:nth-of-type(n+2) > p {
+		width: 80%;
+		height: 30px;
+		line-height: 30px;
+		color: rgb(136, 136, 136);
+		background-color: rgba(43, 51, 59, .06);
+		text-align: center;
+		margin: 0 auto;
+		border-radius: 9px;
+		-webkit-border-radius: 9px;
+		-moz-border-radius: 9px;
+		-ms-border-radius: 9px;
+		-o-border-radius: 9px;
+		margin-bottom: 12px;
+	}
+
+	/* 资料模块内容 */
+	.itemize > div > a {
+		width: 100%;
+		height: 28px;
+		line-height: 28px;
+		box-sizing: border-box;
+		clear: both;
+		display: block;
+		padding: 0px 12px;
+		/* color: rgb(38, 42, 44); */
+		font-size: 14px/1.5;
+		font-family: '宋体';
+		display: block;
+	}
+
+	.itemize > div > a:nth-of-type(n+2) {
+		border-top: 1px solid rgb(206, 206, 206);
+	}
+
+	/* 鼠标悬停显示隐藏省略文字：暂时使用 */
+	/* 设想：使用属性进行提示 */
+	.itemize > div > a .classify:hover {
+		color: rgb(255, 186, 20);
+		display: block;
+		text-overflow: inherit;
+		overflow: visible;
+		white-space: pre-line;
+	}
+
+	/* 资料》》字数过多，省略号代替 */
+	.itemize > div > a > p {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		-webkit-line-clamp: 1;
+	}
+
+	/*
+	右半边位置
+	*/
+	.data-plate {
+		width: 100%;
+		padding: 8px 12px 12px 12px;
+		margin-bottom: 12px;
+		box-sizing: border-box;
+		background: #fff;
+		box-shadow: 0 2px 4px 1px rgba(165, 162, 162, 0.568);
+		float: left;
+		border-radius: 22px;
+		-webkit-border-radius: 22px;
+		-moz-border-radius: 22px;
+		-ms-border-radius: 22px;
+		-o-border-radius: 22px;
+	}
+
+	/* .add-others {
+		padding-bottom: 12px;
+	} */
+	.data-plate .document-link:hover {
+		color: rgb(255, 186, 20);
+	}
+
+	.line-left {
+		width: 7px;
+		height: 26px;
+		margin-right: 3px;
+		background: red;
+		float: left;
+		position: relative;
+		top: 2px;
+	}
+
+	.data-plate span {
+		height: 30px;
+		line-height: 30px;
+		padding: 0px 5px;
+		display: block;
+		font-weight: bold;
+	}
+
+	.more {
+		float: right;
+		margin-top: -30px;
+		margin-right: 3px;
+	}
+
+	.more > a {
+		color: rgb(38, 42, 44);
+		font-family: '宋体';
+	}
+
+	.more a:hover {
+		color: rgb(255, 186, 20);
+	}
+
+	/*
+	资料方块
+	*/
+	.wrapper9 {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 117px 117px 117px;
+		gap: 12px;
+		box-sizing: border-box;
+	}
+
+	.wrapper6 {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 117px 117px;
+		gap: 12px;
+		box-sizing: border-box;
+	}
+
+	.wrapper3 {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 117px;
+		gap: 12px;
+		box-sizing: border-box;
+	}
+
+	/* 简述 */
+	/* 文本溢出，省略号，4行 */
+	.data-plate .informations {
+		/* text-align: justify; */
+		box-sizing: border-box;
+		display: -webkit-box;
+		overflow: hidden;
+		/*溢出省略号（通配）*/
+		overflow: ellipsis;
+		/*溢出省略号，支持ie、safari（webkit）*/
+		/*溢出省略号，支持opera*/
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		border-radius: 12px;
+		-webkit-border-radius: 12px;
+		-moz-border-radius: 12px;
+		-ms-border-radius: 12px;
+		-o-border-radius: 12px;
+	}
+
+	.data-plate .informations:hover {
+		margin-top: -38.4px;
+		display: -webkit-box;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+		white-space: normal !important;
+		-webkit-line-clamp: 6;
+		-webkit-box-orient: vertical;
+		box-sizing: border-box;
+		background: rgb(255, 186, 20);
+		z-index: 3;
+		/* opacity: 0.7; */
+		/* height: 170px; */
+		/* box-shadow: 0 8px 16px 0 rgba(7, 17, 27, .05); */
+		box-shadow: 0 4px 4px rgb(163, 163, 163);
+	}
+
+	/*
+	介绍文本
+	*/
+	/* 文本溢出，省略号，1行 */
+	.informations .informations-title {
+		padding-top: 4px;
+		font-size: 14px/1.5;
+		font-family: '宋体';
+		height: auto;
+		border-bottom: 0.5px solid gray;
+		overflow: hidden;
+		/*溢出省略号（通配）*/
+		overflow: ellipsis;
+		/*溢出省略号，支持ie、safari（webkit）*/
+		/*溢出省略号，支持opera*/
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+		white-space: nowrap !important;
+		-webkit-line-clamp: 1;
+	}
+
+	/* .data-plate-informations-line {
+		border: 0.5px solid gray;
+		box-sizing: border-box;
+	} */
+	/* 简述 */
+	/* 文本溢出，省略号，4行 */
+	.informations .informations-text-sketch {
+		/* font-size: 17.2px; */
+		color: rgb(38, 42, 44);
+		font-size: 14px;
+		/* font-family: '宋体'; */
+		font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, SimSun, 宋体, Heiti, 黑体, sans-serif;
+		padding: 4px;
+	}
+
+	/*1*/
+	.information1 {
+		background: #F7DB70;
+	}
+
+	.information2 {
+		background: #FFDD94;
+	}
+
+	.information3 {
+		background: #D0E6A5;
+	}
+
+	/*2*/
+	.information4 {
+		background: #FA897B;
+	}
+
+	.information5 {
+		background: #EE9C6C;
+	}
+
+	.information6 {
+		background: #CCABD8;
+	}
+
+	/*3*/
+	.information7 {
+		background: #75CCE8;
+	}
+
+	.information8 {
+		background: #F2A7BE;
+	}
+
+	.information9 {
+		background: #F7DB70;
+	}
+}
+
+
+/* 移动版 */
+
+@media screen and (max-width: 959px) {
+	#Date .main {
+		width: 100%;
+		margin: 0px auto;
+		margin-top: 24px;
+		/* margin-bottom: 12px; */
+	}
+
+	/*
+	左半边位置
+	*/
+	.data-left {
+		display: none;
+	}
+
+	/*
+	右半边位置
+	*/
+	.data-right {
+		width: 100%;
+		/* padding: 0px 12px; */
+		box-sizing: border-box;
+		margin: 0px auto;
+	}
+
+	.data-plate {
+		width: 100%;
+		padding: 8px 12px 12px 12px;
+		margin-bottom: 12px;
+		box-sizing: border-box;
+		background: #fff;
+		box-shadow: 0 8px 16px 0 rgba(7, 17, 27, .05);
+		border-radius: 22px;
+		-webkit-border-radius: 22px;
+		-moz-border-radius: 22px;
+		-ms-border-radius: 22px;
+		-o-border-radius: 22px;
+		float: left;
+	}
+
+	.line-left {
+		width: 7px;
+		height: 26px;
+		margin-right: 3px;
+		background: red;
+		float: left;
+		position: relative;
+		top: 2px;
+	}
+
+	.data-plate span {
+		height: 30px;
+		line-height: 30px;
+		padding: 0px 5px;
+		display: block;
+		font-weight: bold;
+	}
+
+	.more {
+		float: right;
+		margin-top: -30px;
+		margin-right: 3px;
+	}
+
+	.more > a {
+		color: rgb(38, 42, 44);
+		font-family: '宋体';
+	}
+
+	/*
+	资料方块
+	*/
+	.wrapper9 {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 112.6px 112.6px 112.6px;
+		gap: 12px;
+		box-sizing: border-box;
+	}
+
+	.wrapper6 {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 112.6px 112.6px;
+		gap: 12px;
+		box-sizing: border-box;
+	}
+
+	.wrapper3 {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 112.6px;
+		gap: 12px;
+		box-sizing: border-box;
+	}
+
+	/* 简述 */
+	.data-plate .informations {
+		/* text-align: justify; */
+		box-sizing: border-box;
+		display: -webkit-box;
+		overflow: hidden;
+		/*溢出省略号（通配）*/
+		overflow: ellipsis;
+		/*溢出省略号，支持ie、safari（webkit）*/
+		/*溢出省略号，支持opera*/
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		border-radius: 12px;
+		-webkit-border-radius: 12px;
+		-moz-border-radius: 12px;
+		-ms-border-radius: 12px;
+		-o-border-radius: 12px;
+	}
+
+	/*介绍文本*/
+	/* 文本溢出，省略号，1行 */
+	.informations .informations-title {
+		padding-top: 4px;
+		font-size: 14px/1.5;
+		font-family: '宋体';
+		height: auto;
+		border-bottom: 0.5px solid gray;
+		overflow: hidden;
+		/*溢出省略号（通配）*/
+		overflow: ellipsis;
+		/*溢出省略号，支持ie、safari（webkit）*/
+		/*溢出省略号，支持opera*/
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+		white-space: nowrap !important;
+		-webkit-line-clamp: 1;
+	}
+
+	/* .data-plate-informations-line {
+		width: inherit;
+		margin: 0px auto;
+		border: 0.5px solid gray;
+	} */
+	/* 4行 */
+	.informations .informations-text-sketch {
+		color: rgb(38, 42, 44);
+		font-size: 14px;
+		/* font-family: '宋体'; */
+		font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, SimSun, 宋体, Heiti, 黑体, sans-serif;
+		padding: 4px;
+	}
+
+	/*1*/
+	.information1 {
+		background: #F7DB70;
+	}
+
+	.information2 {
+		background: #FFDD94;
+	}
+
+	.information3 {
+		background: #D0E6A5;
+	}
+
+	/*2*/
+	.information4 {
+		background: #FA897B;
+	}
+
+	.information5 {
+		background: #EE9C6C;
+	}
+
+	.information6 {
+		background: #CCABD8;
+	}
+
+	/*3*/
+	.information7 {
+		background: #75CCE8;
+	}
+
+	.information8 {
+		background: #F2A7BE;
+	}
+
+	.information9 {
+		background: #F7DB70;
+	}
+}
