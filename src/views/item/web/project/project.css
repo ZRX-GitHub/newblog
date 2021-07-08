@@ -1,0 +1,47 @@
+.project-introduce-a {
+    text-decoration: none;
+    color: black;
+}
+
+.project-introduce-a:hover .project-introduce-text::after {
+    -webkit-animation: myMove 1s forwards;
+    animation: myMove 1s forwards;
+    padding: 4px 6px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+@-webkit-keyframes myMove {
+    from {
+        background-color: rgb(196, 190, 190);
+        opacity: 0.5;
+    }
+    to {
+        background-color: rgb(196, 190, 190);
+    }
+}
+
+@keyframes myMove {
+    from {
+        background-color: rgb(241, 241, 241);
+    }
+    to {
+        background-color: rgb(221, 221, 221);
+    }
+}
+
+.project-introduce-text {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: white;
+    border-bottom: 3px double red;
+    text-align: center;
+}
+
+.project-introduce-text::after {
+    content: "返回项目介绍页";
+}

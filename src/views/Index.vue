@@ -2,28 +2,311 @@
 	<div id="Index">
 		<div class="main">
 
-			<h1>主页内容待构建</h1>
-			<p style="margin-top: 10px;">优秀博客链接：</p>
-			<a href="https://www.myong.top/" target="_blank">https://www.myong.top/</a><br>
-			<div class="img dark-img"><img class="zooming"
-										   src="https://gitee.com/ZRX001/gallery/raw/master/gallery/20201015212955.png"
-										   alt=""></div>
-			<br>
-			<a href="https://www.css3er.com/" target="_blank">https://www.css3er.com/</a><br>
-			<div class="img dark-img"><img class="zooming"
-										   src="https://gitee.com/ZRX001/gallery/raw/master/gallery/20201015215611.png"
-										   alt=""></div>
-			<br>
-			<a href="https://www.heanny.cn/" target="_blank">https://www.heanny.cn/</a><br>
-			<div class="img dark-img"><img class="zooming"
-										   src="https://gitee.com/ZRX001/gallery/raw/master/gallery/20201015220322.png"
-										   alt=""></div>
+			<!--			轮播图-->
+			<div class="block">
+				<el-carousel :interval="5000" arrow="hover" :height="bannerHeight+'px'">
+					<el-carousel-item v-for="item in imgList" :key="item.index" style="border-radius: 0 0 10px 10px">
+						<img ref="bannerHeight" :src="item.idView" alt="" @load="imgLoad" style="width: 100%">
+					</el-carousel-item>
+				</el-carousel>
+			</div>
+
+
+			<div class="top">
+				<div class="indexLeaveMessage">
+
+					<el-form>
+
+						<el-form-item label="用户名">
+							<el-input v-model="leavemessage.lename" title="请输入用户名" required="required"></el-input>
+						</el-form-item>
+						<el-form-item label="">
+							<el-input
+								type="textarea"
+								:autosize="{ minRows: 2}"
+								placeholder="请输入内容"
+								maxlength="360"
+								v-model="leavemessage.lemessage">
+							</el-input>
+						</el-form-item>
+
+						<div class="indexLeaveMessageButton">
+							<el-button native-type="reset" size="mini" style="margin-top: 10px"
+									   round>重置
+							</el-button>
+							<el-button native-type="submit" type="primary" size="mini" style="margin-top: 10px"
+									   round @click="aa">提交
+							</el-button>
+						</div>
+
+					</el-form>
+
+				</div>
+			</div>
+
+
+			<el-container class="container">
+
+				<el-container class="left">
+
+					<el-main class="containerMain">
+						<div v-on:information></div>
+
+						<ul class="infinite-list" v-infinite-scroll="load"
+							style="overflow:auto;"
+							v-bind:style="{height:containerMainHeight + 'px'}">
+
+							<!--							无限加载 需要可以循环增加的次数，不能固定-->
+							<!--							<li v-for="(item,index) in hh" class="infinite-list-item">{{ index + 1 }}楼-->
+							<!--								<div><p>测试</p></div>-->
+
+							<!--							</li>-->
+
+
+							<li v-for="(item,index) in leaveMessageDate" class="infinite-list-item">
+								{{ leaveMessageDate.length - index }}楼
+								<div class="indexLename">留言来自：{{ item.lename }}</div>
+								<div class="indexLemessage">{{ item.lemessage }}</div>
+								<div class="indexLetime">{{ item.letime }}</div>
+							</li>
+
+							<!--							<div v-bind:style="{height:leaveMessageLength}"></div>-->
+
+							<!--														<li v-for="(item,index) in leaveMessageLength" class="infinite-list-item">{{ index + 1 }}楼-->
+							<!--															<div v-for="leaveMessage in item.leaveMessageDate">-->
+							<!--																<div><p>{{ leaveMessage }}</p></div>-->
+							<!--																<div><p>留言区域</p></div>-->
+							<!--															</div>-->
+							<!--														</li>-->
+
+
+							<!--							<li v-for="i in count" class="infinite-list-item">{{ i }}楼-->
+							<!--								<div><p>name</p></div>-->
+							<!--								<div><p>留言区域</p></div>-->
+							<!--							</li>-->
+
+						</ul>
+
+					</el-main>
+
+				</el-container>
+
+				<el-aside width="303px" class="right">
+
+					<div class="indexLogin">
+						<el-form>
+							<p>登录</p>
+							<div>
+								<label for="indexLoginUsername">账&emsp;户：</label>
+								<input type="text" id="indexLoginUsername">
+							</div>
+
+							<div>
+								<label for="indexLoginPassword">密&emsp;码：</label>
+								<input type="text" id="indexLoginPassword">
+							</div>
+
+							<div class="indexLoginButton">
+								<el-button native-type="submit" size="mini"
+										   round disabled>注册
+								</el-button>
+								<el-button native-type="submit" type="primary" size="mini"
+										   round>登录
+								</el-button>
+							</div>
+						</el-form>
+					</div>
+
+					<div class="indexLeaveMessage">
+
+						<el-form>
+
+							<el-form-item label="用户名">
+								<el-input v-model="leavemessage.lename" title="请输入用户名" required="required"></el-input>
+							</el-form-item>
+							<el-form-item label="">
+								<el-input
+									type="textarea"
+									:autosize="{ minRows: 2}"
+									placeholder="请输入内容"
+									maxlength="360"
+									v-model="leavemessage.lemessage">
+								</el-input>
+							</el-form-item>
+
+							<div class="indexLeaveMessageButton">
+								<el-button native-type="reset" size="mini" style="margin-top: 10px"
+										   round>重置
+								</el-button>
+								<el-button native-type="submit" type="primary" size="mini" style="margin-top: 10px"
+										   round @click="aa">提交
+								</el-button>
+							</div>
+
+						</el-form>
+
+					</div>
+
+				</el-aside>
+
+			</el-container>
+
+
 		</div>
 
-<!--		<my-back-top></my-back-top>-->
 
 	</div>
+
 </template>
 
 <style scoped src="../assets/css/index.css"></style>
+
+<script>
+export default {
+	data() {
+		return {
+			imgList: [{
+				index: 0,
+				idView: require('@/assets/images/background.png')
+			}, {
+				index: 1,
+				idView: require('@/assets/images/topBackgound2.png')
+			}, {
+				index: 2,
+				idView: require('@/assets/images/topBackgound3.png')
+			}, {
+				index: 3,
+				idView: require('@/assets/images/topBackgound4.png')
+			}],
+			// 动态设置轮播图容器的高度
+			bannerHeight: "",
+			// 左侧--无限加载
+			count: 0,
+			leaveMessageDate: [
+				// {lename: '小明', lemessage: '测试——小明'},
+				// {lename: '小红', lemessage: '测试——小红'},
+				// {lename: '小红', lemessage: '测试——小红'}
+			],
+			leavemessage: {
+				lename: '',
+				lemessage: '',
+				letime: ''
+			},
+			leaveMessage: '',
+			leaveMessageLength: '',
+			// 右侧--登录
+			formInline: {
+				user: ''
+			},
+			// 右侧--留言文本框
+			textarea: '',
+			containerMainHeight: '',
+			hh: 0
+
+
+		}
+	},
+	computed: {
+		noMore() {
+			return this.count >= 100
+		},
+		disabled() {
+			return this.loading || this.noMore
+		}
+	},
+	created() {
+		this.leMessageDateText();
+	},
+	mounted() {
+		this.imgLoad();
+		window.addEventListener('resize', () => {
+			this.bannerHeight = this.$refs.bannerHeight[0].height;
+			this.imgLoad();
+		}, false);
+
+	},
+	methods: {
+		imgLoad() {
+			this.$nextTick(() => {
+				this.bannerHeight = this.$refs.bannerHeight[0].height;
+				// console.log(this.$refs.bannerHeight[0].height);
+
+				// 主页--左侧--留言区域高度
+				let clientHeight = document.body.clientHeight;
+				this.containerMainHeight = clientHeight - this.bannerHeight - (10 + 49);
+			})
+		},
+		leMessageDateText() {
+			let _this = this;
+			// 从数据库获取留言内容
+			axios.request('http://localhost:8183/leavemessage/findAll').then(function (resp) {
+				// console.log(resp.data);
+
+				// alert(resp.data.length)
+				_this.hh = resp.data.length;
+
+				for (let i = 0; i < resp.data.length; i++) {
+					// 留言板数据库的数据
+					_this.leaveMessageDate.push({
+						lename: resp.data[i].lename,
+						lemessage: resp.data[i].lemessage,
+						letime: resp.data[i].letime
+					});
+					_this.leaveMessageDate.reverse();
+				}
+
+			})
+		},
+		load() {
+			// alert(this.leaveMessageLength)
+			// alert(this.leaveMessageDate.length)
+			// alert(this.hh)
+			// let aa = 100;
+			// if (this.hh === aa) {
+			// 	this.hh = aa;
+			// } else {
+			// 	this.hh += 1;
+			// }
+
+			// if (this.leaveMessageDate.length === this.hh) {
+			// 	this.leaveMessageDate.length = this.hh;
+			// } else {
+			// 	this.leaveMessageDate.length += 1;
+			// }
+
+			// let aa = 1000;
+			// if (this.count === aa) {
+			// 	this.count = aa;
+			// } else {
+			// 	this.count += 1;
+			// }
+		},
+		// 添加留言--按钮
+		aa() {
+
+
+			// alert(this.leavemessage.lename)
+			// alert(111111)
+			// console.log('执行成功')
+			let _this = this;
+			// _this.information();
+
+
+			// let {lename,lemessage} = _this.leavemessage;
+			// // 提交成功，重置
+			// if (!lename || !lemessage) return;
+
+			axios.post('http://localhost:8183/leavemessage/addLeaveMessage', _this.leavemessage);
+		},
+		information() {
+			this.$message({
+				message: '恭喜你，这是一条成功消息',
+				type: 'success'
+			});
+		}
+
+
+	}
+}
+</script>
 

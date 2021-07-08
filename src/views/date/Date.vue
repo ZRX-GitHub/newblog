@@ -800,7 +800,7 @@
 	</div>
 </template>
 
-<script src="src/assets/js/data.js"></script>
+<!--<script src="src/assets/js/data.js"></script>-->
 <script>
 export default {
 	name: "Date"

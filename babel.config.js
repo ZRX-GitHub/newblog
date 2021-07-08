@@ -1,12 +1,12 @@
 module.exports = {
 	presets: [
 		'@vue/cli-plugin-babel/preset'
-	],
+	]
 	// 设置静态文件地址
-	dev: {
-		assetsSubDirectory: 'static',
-		assetsPublicPath: './'
-	}
+	// dev: {
+	// 	assetsSubDirectory: 'static',
+	// 	assetsPublicPath: './'
+	// }
 	// plugins: [
 	// 	["prismjs", {
 	// 		"languages": ["javascript", "css", "markup","php","html"],

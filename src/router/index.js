@@ -13,14 +13,21 @@ import TravelNanning from "../views/travel/GuangXi/TravelNanning"
 // 南京
 import TravelNanjing from '../views/travel/JiangSu/TravelNanjing'
 // 扬州
-import TravelYangzhou from "../views/travel/JiangSu/TravelYangzhou";
+import TravelYangzhou from "../views/travel/JiangSu/TravelYangzhou"
 // 江苏
-import TravleSuzhou from "../views/travel/JiangSu/TravleSuzhou";
+import TravleSuzhou from "../views/travel/JiangSu/TravleSuzhou"
 
 // 资料子页面
 /*301*/
 import D301001 from '../views/date/301/301001'
 import D301002 from '../views/date/301/301002'
+
+// 项目子页面
+/*401*/
+import D401001 from '../views/item/web/401/401001'
+import D401002 from '../views/item/web/401/401002'
+import D401003 from '../views/item/web/401/401003'
+import D401004 from '../views/item/web/401/401004'
 
 
 
@@ -135,6 +142,31 @@ const routes = [
 		path: '/date/301/301002',
 		name: D301002,
 		component: D301002,
+		show: false
+	},
+	/*项目子页面*/
+	{
+		path: '/item/web/401/401001',
+		name: D401001,
+		component: D401001,
+		show: false
+	},
+	{
+		path: '/item/web/401/401002',
+		name: D401002,
+		component: D401002,
+		show: false
+	},
+	{
+		path: '/item/web/401/401003',
+		name: D401003,
+		component: D401003,
+		show: false
+	},
+	{
+		path: '/item/web/401/401004',
+		name: D401004,
+		component: D401004,
 		show: false
 	}
 
