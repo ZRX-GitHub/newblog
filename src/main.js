@@ -10,6 +10,8 @@ import './plugins/element.js'
 import '../src/assets/css/css.css'
 import '../src/assets/css/dark.css'
 
+import '../src/assets/js/js'
+
 /*
 * 去除Vue warn，取消eslint
 * */
@@ -32,6 +34,10 @@ Vue.component('MyFooter', MyFooter);
 // 301目录
 import catalog301 from './views/date/301/data-classify-catalog-301';
 Vue.component('catalog301', catalog301);
+
+// 401目录
+import catalog401 from './views/item/web/401/item-classify-catalog-401';
+Vue.component('catalog401', catalog401);
 
 Vue.config.productionTip = false
 

@@ -105,3 +105,7 @@ footer a {
 footer a:hover {
     color: rgb(255, 186, 20);
 }
+
+@media screen and (max-width: 937px) {
+
+}

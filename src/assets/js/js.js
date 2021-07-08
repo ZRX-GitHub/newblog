@@ -1,5 +1,5 @@
 /*彩蛋*/
-const str = "开源地址： https://github.com/ZRX-GitHub/ZRX-GitHub.github.io"
+const str = "开源地址： https://github.com/ZRX-GitHub/newblog"
 console.log("%c" + str, "color: red; font-size: 17px;font-weight:bold");
 console.warn("WeChat ID: ZRX_0615");
 console.log("%c\n ", "font-size: 180px;background:url('http://m.qpic.cn/psc?/V12y1aA30KVXf9/NA7c.P04lftfqRw.HyJC1bIjUZWfBOLQC42SzDxTbte7A52ADpBlsrJZzCuuQ6rmXXk5J6GsGFhIx.GZWzVMsOGjrxkC1gi82mWqicuYF8M!/a&rf=albumlist&t=5') no-repeat 0 0");

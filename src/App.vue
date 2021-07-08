@@ -42,7 +42,7 @@
 <!--				<el-input placeholder="请输入密码" v-model="passwordInput" show-password></el-input>-->
 
 				<div id="Login">
-					<div id="loginBody" v-bind:style="{height:loginBodyHeight}">
+					<div id="loginBody">
 						<div id="loginForm">
 
 							<form action="./loginCheck" method="post">
@@ -71,6 +71,12 @@ body {
 	使用 el-dialog 弹窗，会导致body 产生 padding-right: 17px;
 	*/
 	padding-right: 0 !important;
+}
+/*
+因为 elementui 的 遮盖层 导致右侧的滚动条消失，并占据滚动条的位置
+*/
+.el-popup-parent--hidden {
+	overflow: initial !important;
 }
 /*
 点击 登录 按钮
@@ -106,7 +112,7 @@ body {
 
 </style>
 <style src="../src/assets/css/travel.css"></style>
-<style src="../src/assets/css/style.css"></style>
+<style src="../src/assets/css/login.css"></style>
 
 
 <script>
