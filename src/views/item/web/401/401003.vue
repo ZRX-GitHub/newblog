@@ -4,11 +4,11 @@
 		<div id="main">
 			<div class="nav-article">
 				<span>当前所在位置：</span>
-				<a href="../../../item/item">项目</a>
+				<router-link :to="{name: '项目'}">项目</router-link>
 				<span> &gt; </span>
-				<a href="401001">Web项目</a>
+				<router-link :to="{name: 'I401001'}">Web项目</router-link>
 				<span> &gt; </span>
-				<a href="401003">仿项目官网</a>
+				<router-link :to="{name: 'I401003'}">仿项目官网</router-link>
 			</div>
 			<div class="main-content">
 
@@ -24,6 +24,7 @@
 						:visible.sync="drawer"
 						:direction="direction"
 						:size="widthSize"
+						:show-close="false"
 						id="app-catalog-text">
 						<div class="catalog">
 							<!--							<p class="text">目 &nbsp; 录</p>-->
@@ -41,13 +42,24 @@
 				<div class="data-classify-right">
 
 					<div class="skip-top">
-						<div class="previouPage"><a href="401002"> <img class="img-l"
-																			src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
-																			alt="左箭头"> <span
-							class="span-txt">可编辑的通讯录</span></a></div>
-						<div class="nextPage"><a href="401004"><span class="span-txt">Vue实现记事本</span> <img
-							class="img-r" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
-							alt="右箭头"> </a></div>
+
+						<div class="previouPage">
+							<router-link :to="{name: 'I401002'}">
+								<img class="img-l"
+									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
+									 alt="左箭头">
+								<span class="span-txt">可编辑的通讯录</span>
+							</router-link>
+						</div>
+						<div class="nextPage">
+							<router-link :to="{name: 'I401004'}">
+								<span class="span-txt">Vue实现记事本</span>
+								<img class="img-l"
+									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+									 alt="左箭头">
+							</router-link>
+						</div>
+
 					</div>
 
 					<div class="article">
@@ -55,8 +67,8 @@
 
 						<p><span class="published">发布于：2021-1-11-1</span></p>
 						<h1>仿项目官网</h1>
-						<p>项目地址：<a href="http://1.15.142.19/item/web/project/3/demo/index.html" target="_blank"
-								   class="url">http://1.15.142.19/item/web/project/3/demo/index.html</a></p>
+						<p>项目地址：<a href="http://zrx001.gitee.io/blog/web/project/3/demo/index.html" target="_blank"
+								   class="url">http://zrx001.gitee.io/blog/web/project/3/demo/index.html</a></p>
 						<p>项目下载：<a href="http://1.15.142.19/item/web/project/3/仿项目官网.zip">仿项目官网.zip</a></p>
 						<h3>说明</h3>
 						<ol start="">
@@ -2051,13 +2063,24 @@ function top_function() {
 					</div>
 
 					<div class="skip-bottom">
-						<div class="previouPage"><a href="401002"> <img class="img-l"
-																			src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
-																			alt="左箭头"> <span
-							class="span-txt">可编辑的通讯录</span></a></div>
-						<div class="nextPage"><a href="401004"><span class="span-txt">Vue实现记事本</span> <img
-							class="img-r" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
-							alt="右箭头"> </a></div>
+
+						<div class="previouPage">
+							<router-link :to="{name: 'I401002'}">
+								<img class="img-l"
+									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
+									 alt="左箭头">
+								<span class="span-txt">可编辑的通讯录</span>
+							</router-link>
+						</div>
+						<div class="nextPage">
+							<router-link :to="{name: 'I401004'}">
+								<span class="span-txt">Vue实现记事本</span>
+								<img class="img-l"
+									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+									 alt="左箭头">
+							</router-link>
+						</div>
+
 					</div>
 
 				</div>
@@ -2072,7 +2095,14 @@ function top_function() {
 
 <script>
 export default {
-	name: "401003"
+	name: "401003",
+	data() {
+		return {
+			drawer: false,
+			direction: 'ltr',
+			widthSize: '70%'
+		}
+	}
 }
 </script>
 

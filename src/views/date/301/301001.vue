@@ -3,11 +3,11 @@
 		<div id="main">
 			<div class="nav-article">
 				<span>当前所在位置：</span>
-				<a href="../../date">资料</a>
+				<router-link :to="{name: '资料'}">资料</router-link>
 				<span> &gt; </span>
-				<a href="301001">PHP</a>
+				<router-link :to="{name: 'D301001'}">PHP</router-link>
 				<span> &gt; </span>
-				<a href="301001">简介</a>
+				<router-link :to="{name: 'D301001'}">简介</router-link>
 			</div>
 			<div class="main-content">
 
@@ -23,6 +23,7 @@
 						:visible.sync="drawer"
 						:direction="direction"
 						:size="widthSize"
+						:show-close="false"
 						id="app-catalog-text">
 						<div class="catalog">
 							<!--							<p class="text">目 &nbsp; 录</p>-->
@@ -41,9 +42,13 @@
 				<div class="data-classify-right">
 
 					<div class="skip-top">
-						<div class="nextPage"><a href="301002"><span class="span-txt">php留言板</span> <img class="img-r"
-																										 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
-																										 alt="右箭头"> </a>
+						<div class="nextPage">
+							<router-link :to="{name: 'D301002'}">
+								<span class="span-txt">php留言板</span>
+								<img class="img-r"
+									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+									 alt="右箭头">
+							</router-link>
 						</div>
 					</div>
 
@@ -89,9 +94,13 @@ echo "我的第一段 PHP 脚本！";
 					</div>
 
 					<div class="skip-bottom">
-						<div class="nextPage"><a href="301002"><span class="span-txt">php留言板</span> <img class="img-r"
-																										 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
-																										 alt="右箭头"> </a>
+						<div class="nextPage">
+							<router-link :to="{name: 'D301002'}">
+								<span class="span-txt">php留言板</span>
+								<img class="img-r"
+									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+									 alt="右箭头">
+							</router-link>
 						</div>
 
 					</div>

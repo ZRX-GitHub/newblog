@@ -1,7 +1,8 @@
 <template>
 	<div>
-		<a class="chapter" href="301001">简介</a>
-		<a class="chapter" href="301002">php留言板</a>
+		<router-link class="chapter" :to="{name: 'D301001'}">简介</router-link>
+		<router-link class="chapter" :to="{name: 'D301002'}">php留言板</router-link>
+
 		<!-- <a class="chapter" href="301003">xxx</a> -->
 	</div>
 </template>

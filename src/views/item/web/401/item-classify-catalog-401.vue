@@ -1,9 +1,9 @@
 <template>
 	<div>
-		<a class="chapter" href="401001">仿美团外卖页面</a>
-		<a class="chapter" href="401002">可编辑的通讯录</a>
-		<a class="chapter" href="401003">仿项目官网</a>
-		<a class="chapter" href="401004">Vue实现记事本</a>
+		<router-link class="chapter" :to="{name: 'I401001'}">仿美团外卖页面</router-link>
+		<router-link class="chapter" :to="{name: 'I401002'}">可编辑的通讯录</router-link>
+		<router-link class="chapter" :to="{name: 'I401003'}">仿项目官网</router-link>
+		<router-link class="chapter" :to="{name: 'I401004'}">Vue实现记事本</router-link>
 	</div>
 </template>
 

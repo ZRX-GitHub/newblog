@@ -4,18 +4,26 @@
 			<div class="travel-left">
 				<div class="nav-city">
 					<div class="Jiangsu">
-						<a href="TravelNanjing">
+
+						<router-link :to="{name: '南京'}">
 							<div class="cityDiv" id="provincial-capital">
 								<div></div>
 								南京
 							</div>
-						</a>
-						<a href="TravelYangzhou">
-							<div class="cityDiv">苏州</div>
-						</a>
-						<a href="TravleSuzhou">
-							<div class="cityDiv">扬州</div>
-						</a>
+						</router-link>
+						<router-link :to="{name: '苏州'}">
+							<div class="cityDiv">
+								<div></div>
+								苏州
+							</div>
+						</router-link>
+						<router-link :to="{name: '扬州'}">
+							<div class="cityDiv">
+								<div></div>
+								扬州
+							</div>
+						</router-link>
+
 					</div>
 				</div>
 			</div>

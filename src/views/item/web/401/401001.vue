@@ -4,11 +4,11 @@
 		<div id="main">
 			<div class="nav-article">
 				<span>当前所在位置：</span>
-				<a href="../../../item/item">项目</a>
+				<router-link :to="{name: '项目'}">项目</router-link>
 				<span> &gt; </span>
-				<a href="401001">Web项目</a>
+				<router-link :to="{name: 'I401001'}">Web项目</router-link>
 				<span> &gt; </span>
-				<a href="401001">仿美团外卖页面</a>
+				<router-link :to="{name: 'I401001'}">仿美团外卖页面</router-link>
 			</div>
 			<div class="main-content">
 
@@ -24,6 +24,7 @@
 						:visible.sync="drawer"
 						:direction="direction"
 						:size="widthSize"
+						:show-close="false"
 						id="app-catalog-text">
 						<div class="catalog">
 							<!--							<p class="text">目 &nbsp; 录</p>-->
@@ -41,7 +42,13 @@
 				<div class="data-classify-right">
 
 					<div class="skip-top">
-						<div class="nextPage"><a href="401002"><span class="span-txt">可编辑的通讯录</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+						<div class="nextPage">
+							<router-link :to="{name: 'I401002'}">
+								<span class="span-txt">可编辑的通讯录</span>
+								<img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+									 alt="右箭头">
+							</router-link>
+						</div>
 					</div>
 
 					<div class="article">
@@ -50,7 +57,9 @@
 
 						<p><span class="published">发布于：2021-1-1-1</span></p>
 						<h1>仿美团页面</h1>
-						<p style="text-align: left;">项目地址：<a href="http://1.15.142.19/item/web/project/1/demo/index.html" target="_blank" class="url">http://1.15.142.19/item/web/project/1/demo/index.html</a></p>
+						<p style="text-align: left;">项目地址：<a
+							href="http://zrx001.gitee.io/blog/web/project/1/demo/index.html" target="_blank"
+							class="url">http://zrx001.gitee.io/blog/web/project/1/demo/index.html</a></p>
 						<p>项目下载：<a href="http://1.15.142.19/item/web/project/1/美团外卖页面.zip">美团外卖页面.zip</a></p>
 						<p>介绍</p>
 						<ul>
@@ -60,9 +69,14 @@
 							<li>
 								<p>纯静态网页，仅使用了html、css。</p>
 								<ul>
-									<li>导航栏：一共采用了三种情况 &gt;&gt; (max-width: 840px) and (min-width: 760px)、min-width: 761px、max-width：670px ；</li>
-									<li>输入框：一共采用了三种情况 &gt;&gt; min-width: 761px、(max-width: 960px) and (min-width: 761px)、max-width: 760px；</li>
-									<li>店铺信息：一共采用了三种情况 &gt;&gt; min-width: 761px、max-width: 760px、max-width: 549.9px。</li>
+									<li>导航栏：一共采用了三种情况 &gt;&gt; (max-width: 840px) and (min-width: 760px)、min-width:
+										761px、max-width：670px ；
+									</li>
+									<li>输入框：一共采用了三种情况 &gt;&gt; min-width: 761px、(max-width: 960px) and (min-width:
+										761px)、max-width: 760px；
+									</li>
+									<li>店铺信息：一共采用了三种情况 &gt;&gt; min-width: 761px、max-width: 760px、max-width: 549.9px。
+									</li>
 
 								</ul>
 							</li>
@@ -84,16 +98,24 @@
 						<p>项目部分截图：</p>
 						<p>1、</p>
 						<p>
-						<div class="dark-img"><img class="zooming" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20210101192142112.png" referrerpolicy="no-referrer" alt="image-20210101192142112"></div>
+						<div class="dark-img"><img class="zooming"
+												   src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20210101192142112.png"
+												   referrerpolicy="no-referrer" alt="image-20210101192142112"></div>
 						<p>2、</p>
 						<p>
-						<div class="dark-img"><img class="zooming" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20210101193255168.png" referrerpolicy="no-referrer" alt="image-20210101193255168"></div>
+						<div class="dark-img"><img class="zooming"
+												   src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20210101193255168.png"
+												   referrerpolicy="no-referrer" alt="image-20210101193255168"></div>
 						<p>3、</p>
 						<p>
-						<div class="dark-img"><img class="zooming" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20210101193552516.png" referrerpolicy="no-referrer" alt="image-20210101193552516"></div>
+						<div class="dark-img"><img class="zooming"
+												   src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20210101193552516.png"
+												   referrerpolicy="no-referrer" alt="image-20210101193552516"></div>
 						<p>4、</p>
 						<p>
-						<div class="dark-img"><img class="zooming" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20210101193614009.png" referrerpolicy="no-referrer" alt="image-20210101193614009"></div>
+						<div class="dark-img"><img class="zooming"
+												   src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20210101193614009.png"
+												   referrerpolicy="no-referrer" alt="image-20210101193614009"></div>
 						<p>&nbsp;</p>
 						<p>&nbsp;</p>
 						<p><strong>总结</strong>：</p>
@@ -1571,7 +1593,13 @@
 					</div>
 
 					<div class="skip-bottom">
-						<div class="nextPage"><a href="401002"><span class="span-txt">可编辑的通讯录</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+						<div class="nextPage">
+							<router-link :to="{name: 'I401002'}">
+								<span class="span-txt">可编辑的通讯录</span>
+								<img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+									 alt="右箭头">
+							</router-link>
+						</div>
 					</div>
 
 				</div>
@@ -1586,7 +1614,14 @@
 
 <script>
 export default {
-	name: "401001"
+	name: "401001",
+	data() {
+		return {
+			drawer: false,
+			direction: 'ltr',
+			widthSize: '70%'
+		}
+	}
 }
 </script>
 

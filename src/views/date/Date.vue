@@ -1,5 +1,8 @@
 <template>
 	<div id="Date">
+
+		<p style="color: red;text-align: center;margin-top: 12px">本目录所属的重构目前仅重构了php资料模块</p>
+
 		<div class="main">
 
 			<div class="data-left">
@@ -10,9 +13,9 @@
 					<div class="bulid-class">
 						<p>自建类</p>
 
-						<a href="date/301/301001">
+						<router-link :to="{name:'D301001'}">
 							<p id="1" class="classify">PHP</p>
-						</a>
+						</router-link>
 						<a href="date/302/302001">
 							<p id="2" class="classify">Java</p>
 						</a>
@@ -120,28 +123,28 @@
 				<div class="data-plate">
 					<div class="line-left"></div>
 					<span>PHP</span>
-					<div class="more"><a href="date/301/301001">查看更多</a></div>
+					<div class="more"><router-link :to="{name: 'D301001'}">查看更多</router-link></div>
 					<div class="data-plate-line"></div>
 					<div class="wrapper3">
 
 
-						<a href="date/301/301001" class="information1 informations">
+						<router-link :to="{name: 'D301001'}" class="information1 informations">
 							<span class="informations-title">简介</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">
 									PHP是一种创建动态交互性站点的强有力的服务器端脚本语言。PHP是免费的，并且使用广泛。对于像微软ASP这样的竞争者来说，PHP无疑是另一种高效率的选项。</p>
 							</div>
-						</a>
+						</router-link>
 
-						<a href="date/301/301002" class="information2 informations">
+						<router-link :to="{name: 'D301002'}" class="information2 informations">
 							<span class="informations-title">php留言板</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">
 									利用php+mysql+工具&#40;vscode+navicat+xampp&#41;搭建php留言板</p>
 							</div>
-						</a>
+						</router-link>
 						<a href="xx" class="information3 informations">
 							<span class="informations-title">xx</span>
 							<div class="data-plate-informations-line"></div>

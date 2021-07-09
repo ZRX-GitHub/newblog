@@ -24,10 +24,12 @@ import D301002 from '../views/date/301/301002'
 
 // 项目子页面
 /*401*/
-import D401001 from '../views/item/web/401/401001'
-import D401002 from '../views/item/web/401/401002'
-import D401003 from '../views/item/web/401/401003'
-import D401004 from '../views/item/web/401/401004'
+import I401001 from '../views/item/web/401/401001'
+import I401002 from '../views/item/web/401/401002'
+import I401003 from '../views/item/web/401/401003'
+import I401004 from '../views/item/web/401/401004'
+/*402*/
+import I402001 from '../views/item/web/402/402001'
 
 
 
@@ -134,39 +136,45 @@ const routes = [
 	/*资料子页面*/
 	{
 		path: '/date/301/301001',
-		name: D301001,
+		name: 'D301001',
 		component: D301001,
 		show: false
 	},
 	{
 		path: '/date/301/301002',
-		name: D301002,
+		name: 'D301002',
 		component: D301002,
 		show: false
 	},
 	/*项目子页面*/
 	{
 		path: '/item/web/401/401001',
-		name: D401001,
-		component: D401001,
+		name: 'I401001',
+		component: I401001,
 		show: false
 	},
 	{
 		path: '/item/web/401/401002',
-		name: D401002,
-		component: D401002,
+		name: 'I401002',
+		component: I401002,
 		show: false
 	},
 	{
 		path: '/item/web/401/401003',
-		name: D401003,
-		component: D401003,
+		name: 'I401003',
+		component: I401003,
 		show: false
 	},
 	{
 		path: '/item/web/401/401004',
-		name: D401004,
-		component: D401004,
+		name: 'I401004',
+		component: I401004,
+		show: false
+	},
+	{
+		path: '/item/web/402/402001',
+		name: 'I402001',
+		component: I402001,
 		show: false
 	}
 

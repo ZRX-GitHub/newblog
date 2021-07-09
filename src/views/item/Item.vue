@@ -1,35 +1,39 @@
 <template>
 	<div id="Item">
 
-		<div class="main" >
+		<div class="main">
 
 			<span class="item-title">前端Web项目</span>
 			<div class="items">
-				<a class="item-web items-classify" href="./item/web/401/401001">
-					<p>仿美团外卖页面</p>
 
+				<router-link :to="{name: 'I401001'}" class="item-web items-classify">
+					<p>仿美团外卖页面</p>
 					<el-image :src="itemWebIma1"></el-image>
-				</a>
-				<a class="item-web items-classify" href="./item/web/401/401002">
+				</router-link>
+
+				<router-link :to="{name: 'I401002'}" class="item-web items-classify">
 					<p>可编辑的通讯录</p>
 					<el-image :src="itemWebIma2"></el-image>
-				</a>
-				<a class="item-web items-classify" href="./item/web/401/401003">
+				</router-link>
+
+				<router-link :to="{name: 'I401003'}" class="item-web items-classify">
 					<p>仿项目官网</p>
 					<el-image :src="itemWebIma3"></el-image>
-				</a>
-				<a class="item-web items-classify" href="./item/web/401/401004">
+				</router-link>
+
+				<router-link :to="{name: 'I401004'}" class="item-web items-classify">
 					<p>Vue实现记事本</p>
 					<el-image :src="itemWebIma4"></el-image>
-				</a>
+				</router-link>
+
 			</div>
 
 			<span class="item-title">JavaWeb项目</span>
 			<div class="items">
-				<a class="item-java items-classify" href="./item/web/402/402001">
+				<router-link :to="{name: 'I402001'}" class="item-java items-classify">
 					<p>登录校验</p>
 					<el-image :src="itemJavaIma4"></el-image>
-				</a>
+				</router-link>
 				<!-- <a class="item-java items-classify">2</a> -->
 				<!-- <a class="item-java items-classify">3</a> -->
 			</div>

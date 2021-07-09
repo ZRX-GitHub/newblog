@@ -1,112 +1,117 @@
 <template>
 	<div id="appContainer">
-		<div id="main">
-			<!--		菜单-->
+		<!--		菜单-->
+		<div class="header">
+			<!--			移动版-->
+			<a href="/" style="margin-left: 5px;display: block">
+				<el-image :src="logo" style="width: 120px;float: left;padding: 0;margin: 0;border: 0"
+						  draggable="false"></el-image>
+			</a>
+
+			<el-dropdown trigger="click" class="el-menu-demo-mobile">
+				<!--				菜单图标-->
+				<div><img src="../src/assets/images/menu.svg" alt=""></div>
+				<!--				<span class="el-dropdown-link">-->
+				<!--				下拉菜单<i class="el-icon-arrow-down el-icon&#45;&#45;right"></i>-->
+				<!--				</span>-->
+				<el-dropdown-menu slot="dropdown" style="margin-top: -10px">
+
+					<a :href="item.path"
+					   v-for="item in $router.options.routes"
+					   v-show="item.show">
+						<el-dropdown-item class="el-dropdown-item-li">
+							{{ item.name }}
+						</el-dropdown-item>
+					</a>
+
+					<!--				点击 弹出 登录面板-->
+					<div class="loginButton" type="text" @click="centerDialogVisible = true">{{ username }}</div>
+
+				</el-dropdown-menu>
+			</el-dropdown>
+
+
+			<!--			PC版-->
 			<el-menu router :default-active="navActive"
 					 style="height: 46px;
  					 box-shadow: 0px 4px 10px 0px rgba(0, 64, 128, .2);"
-					 class="el-menu-demo"
+					 class="el-menu-demo el-menu-demo-pc"
 					 mode="horizontal"
 					 @select="handleSelect">
 
 				<!--				logo-->
-				<a href="/" style="margin-left: 20px;display: block">
-					<el-image :src="logo" style="width: 120px;float: left;padding: 0;margin: 0;border: 0"
+				<a href="/" style="display: block">
+					<el-image :src="logo" style="width: 120px;float: left;padding: 0;border: 0;margin-left: -120px"
 							  draggable="false"></el-image>
 				</a>
 
 				<el-menu-item style="height: 46px;line-height: 46px;font-weight: bold"
 							  v-for="(item,index) in $router.options.routes"
 							  v-show="item.show"
-							  :index="item.path"
-							  v-bind:style="{float:(item.name ==='登录'? 'right':'')}">{{ item.name }}
+							  :index="item.path">{{ item.name }}
 				</el-menu-item>
 
 				<!--				点击 弹出 登录面板-->
-				<div class="loginBotton" type="text" @click="centerDialogVisible = true">{{ username }}</div>
+				<div class="loginButton" type="text" @click="centerDialogVisible = true">{{ username }}</div>
 
 			</el-menu>
 
-			<!--		路由页面-->
-			<router-view></router-view>
+		</div>
 
-			<my-back-top></my-back-top>
 
-<!--			登录面板-->
-			<el-dialog
-				:visible.sync="centerDialogVisible"
-				width="0%"
-				center>
+		<!--		路由页面-->
+		<router-view></router-view>
 
-<!--				<el-input v-model="usernameInput" placeholder="请输入内容"></el-input>-->
-<!--				<el-input placeholder="请输入密码" v-model="passwordInput" show-password></el-input>-->
+		<my-back-top></my-back-top>
 
-				<div id="Login">
-					<div id="loginBody">
-						<div id="loginForm">
+		<!--			登录面板-->
+		<el-dialog
+			:visible.sync="centerDialogVisible"
+			width="0%"
+			center>
 
-							<form action="./loginCheck" method="post">
-								<p class="loginTitle">欢迎登录</p>
-								<span><input type="text" name="username" placeholder="手机号/用户名/邮箱" class="login user"></span>
-								<span><input type="password" name="password" placeholder="请输入密码" class="login password"></span>
-								<!-- 预留验证码的位置，等待开发注册功能后使用 -->
-								<button type="submit">登录</button>
-							</form>
+			<!--				<el-input v-model="usernameInput" placeholder="请输入内容"></el-input>-->
+			<!--				<el-input placeholder="请输入密码" v-model="passwordInput" show-password></el-input>-->
 
-						</div>
+			<div id="Login">
+				<div id="loginBody">
+					<div id="loginForm">
+
+						<form action="./loginCheck" method="post">
+							<p class="loginTitle">欢迎登录</p>
+							<span><input type="text" name="username" placeholder="手机号/用户名/邮箱" class="login user"></span>
+							<span><input type="password" name="password" placeholder="请输入密码"
+										 class="login password"></span>
+							<!-- 预留验证码的位置，等待开发注册功能后使用 -->
+							<button type="submit">登录</button>
+						</form>
+
 					</div>
 				</div>
+			</div>
 
-			</el-dialog>
+		</el-dialog>
 
-		</div>
 
 	</div>
 </template>
 
 
 <style>
+
+
 body {
 	/*
 	使用 el-dialog 弹窗，会导致body 产生 padding-right: 17px;
 	*/
 	padding-right: 0 !important;
 }
+
 /*
 因为 elementui 的 遮盖层 导致右侧的滚动条消失，并占据滚动条的位置
 */
 .el-popup-parent--hidden {
 	overflow: initial !important;
-}
-/*
-点击 登录 按钮
-*/
-.loginBotton {
-	line-height: 46px;
-	cursor: pointer;
-	float: right;
-	position: relative;
-	color: red;
-	right: 20px;
-	/*font-weight: bold;*/
-}
-.loginBotton:hover {
-	color: #FFBA14;
-}
-
-	/*
-	登录 弹窗
-	*/
-.el-dialog {
-	display: flex;
-	flex-direction: column;
-	margin:0 !important;
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform:translate(-50%,-50%);
-	max-height:calc(100% - 200px);
-	max-width:calc(100% - 30px);
 }
 
 

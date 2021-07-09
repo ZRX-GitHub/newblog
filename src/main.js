@@ -39,6 +39,12 @@ Vue.component('catalog301', catalog301);
 import catalog401 from './views/item/web/401/item-classify-catalog-401';
 Vue.component('catalog401', catalog401);
 
+// 402目录
+import catalog402 from './views/item/web/402/item-classify-catalog-402';
+Vue.component('catalog402', catalog402);
+
+
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -2,9 +2,18 @@
 	<div id="Index">
 		<div class="main">
 
+<!--			滚动通知-->
+			<div id="indexTop">
+				<div class="indexTopText">
+					<span>
+						欢迎访问Simple的个人博客&nbsp，<span id="indexTopTextTime" v-on:click="time"></span>
+					</span>
+				</div>
+			</div>
+
 			<!--			轮播图-->
 			<div class="block">
-				<el-carousel :interval="5000" arrow="hover" :height="bannerHeight+'px'">
+				<el-carousel :interval="5000" arrow="hover" :height="bannerHeight+'px'" direction="vertical">
 					<el-carousel-item v-for="item in imgList" :key="item.index" style="border-radius: 0 0 10px 10px">
 						<img ref="bannerHeight" :src="item.idView" alt="" @load="imgLoad" style="width: 100%">
 					</el-carousel-item>
@@ -12,6 +21,7 @@
 			</div>
 
 
+<!--			移动版--留言板  -->
 			<div class="top">
 				<div class="indexLeaveMessage">
 
@@ -162,21 +172,25 @@
 <style scoped src="../assets/css/index.css"></style>
 
 <script>
+setInterval("document.getElementById('datetime').innerHTML=new Date().toLocaleString();", 1000);
+</script>
+
+<script>
 export default {
 	data() {
 		return {
 			imgList: [{
 				index: 0,
-				idView: require('@/assets/images/background.png')
+				idView: require('@/assets/images/yintan1.jpg')
 			}, {
 				index: 1,
-				idView: require('@/assets/images/topBackgound2.png')
+				idView: require('@/assets/images/yintan2.jpg')
 			}, {
 				index: 2,
-				idView: require('@/assets/images/topBackgound3.png')
+				idView: require('@/assets/images/yintan3.jpg')
 			}, {
 				index: 3,
-				idView: require('@/assets/images/topBackgound4.png')
+				idView: require('@/assets/images/yintan4.jpg')
 			}],
 			// 动态设置轮播图容器的高度
 			bannerHeight: "",
@@ -216,6 +230,7 @@ export default {
 	},
 	created() {
 		this.leMessageDateText();
+		this.time();
 	},
 	mounted() {
 		this.imgLoad();
@@ -226,6 +241,12 @@ export default {
 
 	},
 	methods: {
+		time() {
+			// 刷新时间
+			setInterval(function () {
+				document.getElementById('indexTopTextTime').innerHTML=new Date().toLocaleString();
+			},1000)
+		},
 		imgLoad() {
 			this.$nextTick(() => {
 				this.bannerHeight = this.$refs.bannerHeight[0].height;
@@ -233,13 +254,13 @@ export default {
 
 				// 主页--左侧--留言区域高度
 				let clientHeight = document.body.clientHeight;
-				this.containerMainHeight = clientHeight - this.bannerHeight - (10 + 49);
+				this.containerMainHeight = clientHeight - (10 + 49);
 			})
 		},
 		leMessageDateText() {
 			let _this = this;
 			// 从数据库获取留言内容
-			axios.request('http://localhost:8183/leavemessage/findAll').then(function (resp) {
+			axios.request('http://1.15.142.19/leavemessage/findAll').then(function (resp) {
 				// console.log(resp.data);
 
 				// alert(resp.data.length)
@@ -252,8 +273,9 @@ export default {
 						lemessage: resp.data[i].lemessage,
 						letime: resp.data[i].letime
 					});
-					_this.leaveMessageDate.reverse();
 				}
+				_this.leaveMessageDate.reverse();
+
 
 			})
 		},
@@ -296,7 +318,12 @@ export default {
 			// // 提交成功，重置
 			// if (!lename || !lemessage) return;
 
-			axios.post('http://localhost:8183/leavemessage/addLeaveMessage', _this.leavemessage);
+			// axios.post('http://localhost:8080/leavemessage/addLeaveMessage', _this.leavemessage);
+			axios.post('http://1.15.142.19/leavemessage/addLeaveMessage', _this.leavemessage).then(function () {
+				// window.history.back(-1);
+				window.location.href = 'http://1.117.171.185/'
+			})
+			window.location.href = 'http://1.117.171.185/'
 		},
 		information() {
 			this.$message({

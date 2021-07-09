@@ -3,17 +3,18 @@
 		<div id="main">
 			<div class="nav-article">
 				<span>当前所在位置：</span>
-				<a href="../../date">资料</a>
+				<router-link :to="{name: '资料'}">资料</router-link>
 				<span> &gt; </span>
-				<a href="301001">PHP</a>
+				<router-link :to="{name: 'D301001'}">PHP</router-link>
 				<span> &gt; </span>
-				<a href="301002">php留言板</a>
+				<router-link :to="{name: 'D301002'}">php留言板</router-link>
 			</div>
 			<div class="main-content">
 
 				<div class="data-classify-left">
 
-					<el-button @click="drawer = true" type="primary" style="margin-left: 16px;background: #66B1FF" id="app-catalog">
+					<el-button @click="drawer = true" type="primary" style="margin-left: 16px;background: #66B1FF"
+							   id="app-catalog">
 						目<br>录
 					</el-button>
 
@@ -22,6 +23,7 @@
 						:visible.sync="drawer"
 						:direction="direction"
 						:size="widthSize"
+						:show-close="false"
 						id="app-catalog-text">
 						<div class="catalog">
 							<!--							<p class="text">目 &nbsp; 录</p>-->
@@ -40,14 +42,16 @@
 				<div class="data-classify-right">
 
 					<div class="skip-top">
-						<div class="previouPage"><a href="301001"> <img class="img-l"
-																		src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
-																		alt="左箭头"> <span class="span-txt">简介</span></a>
+						<div class="previouPage">
+							<router-link :to="{name: 'D301001'}">
+								<img class="img-l"
+									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
+									 alt="左箭头">
+								<span class="span-txt">简介</span>
+							</router-link>
+
 						</div>
-						<div class="nextPage"><a href="301003"><span class="span-txt">xx</span> <img class="img-r"
-																									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
-																									 alt="右箭头"> </a>
-						</div>
+
 					</div>
 
 					<div class="article">
@@ -214,9 +218,13 @@ function read($pdo, $sql)
 																		src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
 																		alt="左箭头"> <span class="span-txt">简介</span></a>
 						</div>
-						<div class="nextPage"><a href="301003"><span class="span-txt">xx</span> <img class="img-r"
-																									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
-																									 alt="右箭头"> </a>
+						<div class="nextPage">
+							<router-link :to="{name: 'D301001'}">
+								<img class="img-l"
+									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
+									 alt="左箭头">
+								<span class="span-txt">简介</span>
+							</router-link>
 						</div>
 					</div>
 

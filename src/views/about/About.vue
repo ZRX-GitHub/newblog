@@ -72,27 +72,4 @@ export default {
 }
 </script>
 
-<style scoped>
-@import "../../assets/css/about.css";
-
-html, body {
-	width: 100% !important;
-	height: 100% !important;
-}
-
-#About {
-	min-height: 100%;
-	position: relative;
-}
-
-.main-container {
-	padding-bottom: 40px;
-}
-
-footer {
-	position: absolute !important;
-	bottom: 0 !important;
-	/*height: 40px;*/
-}
-
-</style>
+<style scoped>@import "../../assets/css/about.css";</style>
