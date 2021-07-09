@@ -3,107 +3,202 @@
 /* CSS Document */
 
 * {
-    padding: 0;
-    border: 0;
-    margin: 0;
-    color: black;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: "Microsoft YaHei", Verdana, Geneva, sans-serif;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    outline: none;
-    list-style: none;
+	padding: 0;
+	border: 0;
+	margin: 0;
+	color: black;
+	text-decoration: none;
+	font-size: 17px;
+	font-family: "Microsoft YaHei", Verdana, Geneva, sans-serif;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	list-style: none;
 }
 
+
+/*
+导航
+*/
+/*PC*/
+@media all  and (min-width: 961px) {
+	.el-menu-demo-mobile {
+		display: none;
+	}
+}
+
+/*
+点击 登录 按钮
+*/
+.el-menu-demo-pc .loginButton {
+	line-height: 46px;
+	cursor: pointer;
+	float: right;
+	position: relative;
+	color: red;
+	right: 20px;
+	/*font-weight: bold;*/
+}
+
+.loginButton:hover {
+	color: #FFBA14;
+}
+
+/*
+登录 弹窗
+*/
+.el-dialog {
+	display: flex;
+	flex-direction: column;
+	margin: 0 !important;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-height: calc(100% - 200px);
+	max-width: calc(100% - 30px);
+}
+
+
+/*Mobile*/
+
+@media all  and (max-width: 960px) {
+	.header {
+		height: 46px;
+		box-shadow: 0px 4px 10px 0px rgba(0, 64, 128, .2);
+	}
+
+	.el-menu-demo-pc {
+		display: none;
+	}
+
+	.el-menu-demo-mobile {
+		float: right;
+		line-height: 46px;
+	}
+
+	.el-menu-demo-mobile > div > img {
+		width: 46px;
+		margin-right: 4px;
+	}
+
+	/*下拉菜单*/
+	.el-dropdown-item-li {
+		width: 160px;
+		border-top: 1px solid #EBEEF5;
+	}
+
+	a:first-child .el-dropdown-item-li {
+		border-top: 0;
+	}
+
+
+	/*	登录按钮*/
+	.loginButton {
+		color: #FFBA14;
+		width: 60px;
+		height: 20px;
+		line-height: 20px;
+		padding: 5px;
+		background: rgba(234, 234, 234, 0.63);
+		text-align: center;
+		margin-bottom: -10px;
+		border-radius: 0 0 0 5px;
+		margin-top: 10px;
+	}
+
+
+}
+
+
 body {
-    /* background: #f5f6f7; */
-    /* background-color: rgba(51, 60, 70, 0.06); */
-    background-color: rgba(156, 159, 163, 0.06);
-    /* background-color: red; */
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
+	/* background: #f5f6f7; */
+	/* background-color: rgba(51, 60, 70, 0.06); */
+	background-color: rgba(156, 159, 163, 0.06);
+	/* background-color: red; */
+	-webkit-overflow-scrolling: touch;
+	scroll-behavior: smooth;
 }
 
 a {
-    word-wrap: break-word;
-    /* 自动换行 */
+	word-wrap: break-word;
+	/* 自动换行 */
 }
 
 .p-img {
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
 .img-p {
-    padding-bottom: 6px;
+	padding-bottom: 6px;
 }
 
 html {
-    height: 100%;
+	height: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 .header {
-    flex: 0 0 auto;
+	flex: 0 0 auto;
 }
 
 .old-blog {
-    line-height: 46px;
-    color: #959595;
-    cursor: default;
-    /*	文本禁止复制*/
-    -moz-user-select: none;
-    /* Firefox私有属性 */
-    -webkit-user-select: none;
-    /* WebKit内核私有属性 */
-    -ms-user-select: none;
-    /* IE私有属性(IE10及以后) */
-    /* KHTML内核私有属性 */
-    -o-user-select: none;
-    /* Opera私有属性 */
-    user-select: none;
-    /* CSS3属性 */
+	line-height: 46px;
+	color: #959595;
+	cursor: default;
+	/*	文本禁止复制*/
+	-moz-user-select: none;
+	/* Firefox私有属性 */
+	-webkit-user-select: none;
+	/* WebKit内核私有属性 */
+	-ms-user-select: none;
+	/* IE私有属性(IE10及以后) */
+	/* KHTML内核私有属性 */
+	-o-user-select: none;
+	/* Opera私有属性 */
+	user-select: none;
+	/* CSS3属性 */
 }
 
 .main {
-    flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 
 footer {
-    width: 100%;
-    min-height: 80px;
-    margin: 0px auto;
-    background: #666;
-    padding-top: 3px;
-    padding-bottom: 10px;
-    text-align: justify;
-    box-sizing: border-box;
-    clear: both;
-    flex: 0 0 auto;
+	width: 100%;
+	min-height: 80px;
+	margin: 0px auto;
+	background: #666;
+	padding-top: 3px;
+	padding-bottom: 10px;
+	text-align: justify;
+	box-sizing: border-box;
+	clear: both;
+	flex: 0 0 auto;
 }
 
 footer p:first-of-type {
-    margin-top: 5px;
-    text-align: center;
+	margin-top: 5px;
+	text-align: center;
 }
 
 footer p {
-    margin-top: 5px;
-    text-align: center;
+	margin-top: 5px;
+	text-align: center;
 }
 
 footer p,
 footer a {
-    color: #C8C8C8;
-    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	color: #C8C8C8;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 }
 
 footer a:hover {
-    color: rgb(255, 186, 20);
+	color: rgb(255, 186, 20);
 }
 
 @media screen and (max-width: 937px) {

@@ -1,78 +1,97 @@
-<!DOCTYPE html>
-<?php
-//  include('../../../modul/user/loginCheck.php');
-?>
-<html>
-<head>
-    <?php
-    include("../../web/include/data-classify-catalog-topLink.php");
-    ?>
+<template>
+	<div>
 
-    <title>登录校验</title>
-</head>
+		<div id="main">
+			<div class="nav-article">
+				<span>当前所在位置：</span>
+				<a href="../../../item">项目</a>
+				<span> &gt; </span>
+				<a href="402001">JavaWeb项目</a>
+				<span> &gt; </span>
+				<a href="402001">登录校验</a>
+			</div>
+			<div class="main-content">
 
-<body class="item-index">
-    <?php
-    include('../../../include/header.php');
-    ?>
-    <div id="main">
-        <div class="nav-article">
-            <span>当前所在位置：</span>
-            <a href="../../../item/item">项目</a>
-            <span> &gt; </span>
-            <a href="402001">JavaWeb项目</a>
-            <span> &gt; </span>
-            <a href="402001">登录校验</a>
-        </div>
-        <div class="main-content">
-            <div class="data-classify-left">
-                <div class="catalog">
-                    <p class="text">目 &nbsp; 录</p>
-                    <?php
-                    include("data-classify-catalog-402.php");
-                    ?>
-                </div>
-            </div>
-            <div class="data-classify-right">
+				<div class="data-classify-left">
 
-                <div class="skip-top">
-                    <!-- <div class="nextPage"><a href="402002.php"><span class="span-txt">可编辑的通讯录</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div> -->
-                </div>
+					<el-button @click="drawer = true" type="primary" style="margin-left: 16px;background: #66B1FF"
+							   id="app-catalog">
+						目<br>录
+					</el-button>
 
-                <div class="article">
-                    <!-- ↓  博客输入  ↓ -->
+					<el-drawer
+						title="目录"
+						:visible.sync="drawer"
+						:direction="direction"
+						:size="widthSize"
+						:show-close="false"
+						id="app-catalog-text">
+						<div class="catalog">
+							<!--							<p class="text">目 &nbsp; 录</p>-->
+							<catalog402></catalog402>
+						</div>
+					</el-drawer>
 
-                    <p><span class="published">发布于：2021-3-12</span></p>
-                    <h1>登录/注册功能</h1>
-                    <p><strong>演示过程，请查看动图。</strong></p>
-                    <p><a href="https://gitee.com/ZRX001/gallery/raw/master/gallery/GIF%202021-3-12%2018-39-03.gif" target="_blank" class="url">https://gitee.com/ZRX001/gallery/raw/master/gallery/GIF%202021-3-12%2018-39-03.gif</a></p>
-                    <p><img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/GIF%202021-3-12%2018-39-03.gif" referrerpolicy="no-referrer" alt="登录/注册动图演示"></p>
-                    <p>&nbsp;</p>
-                    <p>实现简述：</p>
-                    <p><strong>String，SringBuffer和 StringBuilder</strong></p>
-                    <p>当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。</p>
-                    <p>和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。</p>
-                    <p>在使用 StringBuffer 类时，每次都会对 StringBuffer 对象本身进行操作，而不是生成新的对象，所以如果需要对字符串进行修改推荐使用 StringBuffer。</p>
-                    <p>StringBuilder 类在 Java 5 中被提出，它和 StringBuffer 之间的最大不同在于 StringBuilder 的方法不是线程安全的（不能同步访问）。</p>
-                    <p>由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。</p>
-                    <p>&nbsp;</p>
-                    <p><strong>服务器端的重定向</strong>可以有两种方式，一是使用HttpServletResponse的sendRedirect()方法，一是使用RequestDispatcher的forward()方法</p>
-                    <p><strong>HttpServletResponse的sendRedirect()：</strong>将 响应定向到参数location指定的、新的URL。location可以是一个绝对的URL，如 response.sendRedirect(&quot;<a href="http://java.sun.com" target="_blank" class="url">http://java.sun.com</a>&quot;)也可以使用相对的URL。如果location以“/”开 头，则容器认为相对于当前Web应用的根，否则，容器将解析为相对于当前请求的URL。这种重定向的方法，将导致客户端浏览器的请求URL跳转。从浏览器
-                        中的地址栏中可以看到新的URL地址，作用类似于上面设置HTTP响应头信息的实现。</p>
-                    <p><strong>RequestDispatcher.forward()：</strong>将 当前的request和response重定向到该RequestDispacher指定的资源。这在实际项目中大量使用，因为完成一个业务操作往往需要 跨越多个步骤，每一步骤完成相应的处理后，转向到下一个步骤。比如，通常业务处理在Servlet中处理，处理的结果转向到一个JSP页面进行显示。这样 看起来类似于Servlet链的功能，但是还有一些区别。一个RequestDispatcher对象可以把请求发送到任意一个服务器资源，而不仅仅是另
-                        外一个Servlet。</p>
-                    <p>&nbsp;</p>
-                    <p><strong>区别：</strong></p>
-                    <p><strong>forward()</strong>方法在服务器端工作；它只能在服务器内工作。因为它是在服务器内工作，故<strong>速度快</strong>。</p>
-                    <p>sendRedirect()方法在客户端工作；它可以在服务器内外使用。它可以将响应重定向到另一个资源，这个资源可以是servlet，jsp，或html文件。它接受相对和绝对的url.也因为它是接受url，所以，它可以再服务器内外工作。缺点：<strong>速度慢</strong>。</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>验证码使用会话来传递。</p>
-                    <p>&nbsp;</p>
-                    <h3>配置好xml文件</h3>
-                    <p>&nbsp;</p>
-                    <h3>ltCode（验证码的产生、传递）</h3>
-                    <pre><code class="language-java" lang="java">package com.web.login;
+					<div class="catalog">
+						<p class="text">目 &nbsp; 录</p>
+						<catalog402></catalog402>
+					</div>
+
+				</div>
+
+				<div class="data-classify-right">
+
+					<div class="skip-top">
+						<!-- <div class="nextPage"><a href="402002.php"><span class="span-txt">可编辑的通讯录</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div> -->
+					</div>
+
+					<div class="article">
+						<!-- ↓  博客输入  ↓ -->
+
+						<p><span class="published">发布于：2021-3-12</span></p>
+						<h1>登录/注册功能</h1>
+						<p><strong>演示过程，请查看动图。</strong></p>
+						<p><a href="https://gitee.com/ZRX001/gallery/raw/master/gallery/GIF%202021-3-12%2018-39-03.gif"
+							  target="_blank" class="url">https://gitee.com/ZRX001/gallery/raw/master/gallery/GIF%202021-3-12%2018-39-03.gif</a>
+						</p>
+						<p><img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/GIF%202021-3-12%2018-39-03.gif"
+								referrerpolicy="no-referrer" alt="登录/注册动图演示"></p>
+						<p>&nbsp;</p>
+						<p>实现简述：</p>
+						<p><strong>String，SringBuffer和 StringBuilder</strong></p>
+						<p>当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。</p>
+						<p>和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。</p>
+						<p>在使用 StringBuffer 类时，每次都会对 StringBuffer 对象本身进行操作，而不是生成新的对象，所以如果需要对字符串进行修改推荐使用
+							StringBuffer。</p>
+						<p>StringBuilder 类在 Java 5 中被提出，它和 StringBuffer 之间的最大不同在于 StringBuilder 的方法不是线程安全的（不能同步访问）。</p>
+						<p>由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。</p>
+						<p>&nbsp;</p>
+						<p><strong>服务器端的重定向</strong>可以有两种方式，一是使用HttpServletResponse的sendRedirect()方法，一是使用RequestDispatcher的forward()方法
+						</p>
+						<p><strong>HttpServletResponse的sendRedirect()：</strong>将
+							响应定向到参数location指定的、新的URL。location可以是一个绝对的URL，如 response.sendRedirect(&quot;<a
+								href="http://java.sun.com" target="_blank" class="url">http://java.sun.com</a>&quot;)也可以使用相对的URL。如果location以“/”开
+							头，则容器认为相对于当前Web应用的根，否则，容器将解析为相对于当前请求的URL。这种重定向的方法，将导致客户端浏览器的请求URL跳转。从浏览器
+							中的地址栏中可以看到新的URL地址，作用类似于上面设置HTTP响应头信息的实现。</p>
+						<p><strong>RequestDispatcher.forward()：</strong>将
+							当前的request和response重定向到该RequestDispacher指定的资源。这在实际项目中大量使用，因为完成一个业务操作往往需要
+							跨越多个步骤，每一步骤完成相应的处理后，转向到下一个步骤。比如，通常业务处理在Servlet中处理，处理的结果转向到一个JSP页面进行显示。这样
+							看起来类似于Servlet链的功能，但是还有一些区别。一个RequestDispatcher对象可以把请求发送到任意一个服务器资源，而不仅仅是另
+							外一个Servlet。</p>
+						<p>&nbsp;</p>
+						<p><strong>区别：</strong></p>
+						<p><strong>forward()</strong>方法在服务器端工作；它只能在服务器内工作。因为它是在服务器内工作，故<strong>速度快</strong>。</p>
+						<p>
+							sendRedirect()方法在客户端工作；它可以在服务器内外使用。它可以将响应重定向到另一个资源，这个资源可以是servlet，jsp，或html文件。它接受相对和绝对的url.也因为它是接受url，所以，它可以再服务器内外工作。缺点：<strong>速度慢</strong>。
+						</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>验证码使用会话来传递。</p>
+						<p>&nbsp;</p>
+						<h3>配置好xml文件</h3>
+						<p>&nbsp;</p>
+						<h3>ltCode（验证码的产生、传递）</h3>
+						<pre><code class="language-java" lang="java">package com.web.login;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
@@ -163,9 +182,9 @@ public class ItCode extends HttpServlet {
 }
 
 </code></pre>
-                    <p>&nbsp;</p>
-                    <h3>Login（登录验证等功能）</h3>
-                    <pre><code class="language-java" lang="java">package com.web.login;
+						<p>&nbsp;</p>
+						<h3>Login（登录验证等功能）</h3>
+						<pre><code class="language-java" lang="java">package com.web.login;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -267,9 +286,9 @@ public class Login extends HttpServlet {
 }
 
 </code></pre>
-                    <p>&nbsp;</p>
-                    <h3>loginTest.html</h3>
-                    <pre><code class="language-html" lang="html">&lt;!DOCTYPE html&gt;
+						<p>&nbsp;</p>
+						<h3>loginTest.html</h3>
+						<pre><code class="language-html" lang="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
 &lt;head&gt;
@@ -325,8 +344,8 @@ public class Login extends HttpServlet {
 
 &lt;/html&gt;
 </code></pre>
-                    <h3>配对css</h3>
-                    <pre><code class="language-css" lang="css">* {
+						<h3>配对css</h3>
+						<pre><code class="language-css" lang="css">* {
     border: 0;
     margin: 0;
     padding: 0;
@@ -440,9 +459,9 @@ public class Login extends HttpServlet {
     color: #fff;
 }
 </code></pre>
-                    <p>&nbsp;</p>
-                    <h3>index.html</h3>
-                    <pre><code class="language-html" lang="html">&lt;!DOCTYPE html&gt;
+						<p>&nbsp;</p>
+						<h3>index.html</h3>
+						<pre><code class="language-html" lang="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
 &lt;head&gt;
@@ -461,24 +480,36 @@ public class Login extends HttpServlet {
 </code></pre>
 
 
-                    <!-- ↑  博客输入  ↑ -->
-                </div>
+						<!-- ↑  博客输入  ↑ -->
+					</div>
 
-                <div class="skip-bottom">
-                    <!-- <div class="nextPage"><a href="402002.php"><span class="span-txt">可编辑的通讯录</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div> -->
-                </div>
+					<div class="skip-bottom">
+						<!-- <div class="nextPage"><a href="402002.php"><span class="span-txt">可编辑的通讯录</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div> -->
+					</div>
 
-            </div>
+				</div>
 
-        </div>
+			</div>
 
 
-    </div>
+		</div>
 
-    <?php
-    include('../../web/include/data-classify-catalog-downLink.php');
-    ?>
-</body>
+	</div>
+</template>
 
-</html>
-<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+<script>
+export default {
+	name: "402001",
+	data() {
+		return {
+			drawer: false,
+			direction: 'ltr',
+			widthSize: '70%'
+		}
+	}
+}
+</script>
+
+<style scoped src="../../../../assets/css/item-auto.css"></style>
+<style scoped src="../../../../assets/css/markdownpad-github.css"></style>
+<style scoped src="../../../../assets/css/data-classify-auto.css"></style>

@@ -4,7 +4,7 @@
 		<div id="main">
 			<div class="nav-article">
 				<span>当前所在位置：</span>
-				<a href="../../../item/item">项目</a>
+				<a href="../../../item">项目</a>
 				<span> &gt; </span>
 				<a href="401001">Web项目</a>
 				<span> &gt; </span>
@@ -24,6 +24,7 @@
 						:visible.sync="drawer"
 						:direction="direction"
 						:size="widthSize"
+						:show-close="false"
 						id="app-catalog-text">
 						<div class="catalog">
 							<!--							<p class="text">目 &nbsp; 录</p>-->
@@ -1586,7 +1587,14 @@
 
 <script>
 export default {
-	name: "401001"
+	name: "401001",
+	data() {
+		return {
+			drawer: false,
+			direction: 'ltr',
+			widthSize: '70%'
+		}
+	}
 }
 </script>
 

@@ -2,9 +2,18 @@
 	<div id="Index">
 		<div class="main">
 
+<!--			滚动通知-->
+			<div id="indexTop">
+				<div class="indexTopText">
+					<span>
+						欢迎访问Simple的个人博客&emsp;北京时间:&nbsp;<span id="indexTopTextTime" v-on:click="time"></span>
+					</span>
+				</div>
+			</div>
+
 			<!--			轮播图-->
 			<div class="block">
-				<el-carousel :interval="5000" arrow="hover" :height="bannerHeight+'px'">
+				<el-carousel :interval="5000" arrow="hover" :height="bannerHeight+'px'" direction="vertical">
 					<el-carousel-item v-for="item in imgList" :key="item.index" style="border-radius: 0 0 10px 10px">
 						<img ref="bannerHeight" :src="item.idView" alt="" @load="imgLoad" style="width: 100%">
 					</el-carousel-item>
@@ -12,6 +21,7 @@
 			</div>
 
 
+<!--			移动版--留言板  -->
 			<div class="top">
 				<div class="indexLeaveMessage">
 
@@ -162,6 +172,10 @@
 <style scoped src="../assets/css/index.css"></style>
 
 <script>
+setInterval("document.getElementById('datetime').innerHTML=new Date().toLocaleString();", 1000);
+</script>
+
+<script>
 export default {
 	data() {
 		return {
@@ -216,6 +230,7 @@ export default {
 	},
 	created() {
 		this.leMessageDateText();
+		this.time();
 	},
 	mounted() {
 		this.imgLoad();
@@ -226,6 +241,12 @@ export default {
 
 	},
 	methods: {
+		time() {
+			// 刷新时间
+			setInterval(function () {
+				document.getElementById('indexTopTextTime').innerHTML=new Date().toLocaleString();
+			},1000)
+		},
 		imgLoad() {
 			this.$nextTick(() => {
 				this.bannerHeight = this.$refs.bannerHeight[0].height;

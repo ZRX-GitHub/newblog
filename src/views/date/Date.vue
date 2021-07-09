@@ -1,5 +1,8 @@
 <template>
 	<div id="Date">
+
+		<p style="color: red;text-align: center;margin-top: 12px">本目录所属的重构目前仅重构了php资料模块</p>
+
 		<div class="main">
 
 			<div class="data-left">

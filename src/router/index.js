@@ -28,6 +28,8 @@ import D401001 from '../views/item/web/401/401001'
 import D401002 from '../views/item/web/401/401002'
 import D401003 from '../views/item/web/401/401003'
 import D401004 from '../views/item/web/401/401004'
+/*402*/
+import D402001 from '../views/item/web/402/402001'
 
 
 
@@ -167,6 +169,12 @@ const routes = [
 		path: '/item/web/401/401004',
 		name: D401004,
 		component: D401004,
+		show: false
+	},
+	{
+		path: '/item/web/402/402001',
+		name: D402001,
+		component: D402001,
 		show: false
 	}
 
