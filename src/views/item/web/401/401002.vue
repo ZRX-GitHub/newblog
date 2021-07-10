@@ -4,11 +4,11 @@
 		<div id="main">
 			<div class="nav-article">
 				<span>当前所在位置：</span>
-				<router-link :to="{name: '项目'}">项目</router-link>
+				<a href="../../../item/item">项目</a>
 				<span> &gt; </span>
-				<router-link :to="{name: 'I401001'}">Web项目</router-link>
+				<a href="401001">Web项目</a>
 				<span> &gt; </span>
-				<router-link :to="{name: 'I401002'}">可编辑的通讯录</router-link>
+				<a href="401002">可编辑的通讯录</a>
 			</div>
 			<div class="main-content">
 
@@ -24,7 +24,6 @@
 						:visible.sync="drawer"
 						:direction="direction"
 						:size="widthSize"
-						:show-close="false"
 						id="app-catalog-text">
 						<div class="catalog">
 							<!--							<p class="text">目 &nbsp; 录</p>-->
@@ -42,24 +41,13 @@
 				<div class="data-classify-right">
 
 					<div class="skip-top">
-
-						<div class="previouPage">
-							<router-link :to="{name: 'I401001'}">
-								<img class="img-l"
-									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
-									 alt="左箭头">
-								<span class="span-txt">仿美团外卖页面</span>
-							</router-link>
-						</div>
-						<div class="nextPage">
-							<router-link :to="{name: 'I401003'}">
-								<span class="span-txt">仿项目官网</span>
-								<img class="img-l"
-									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
-									 alt="左箭头">
-							</router-link>
-						</div>
-
+						<div class="previouPage"><a href="401001"> <img class="img-l"
+																			src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
+																			alt="左箭头"> <span
+							class="span-txt">仿美团外卖页面</span></a></div>
+						<div class="nextPage"><a href="401003"><span class="span-txt">仿项目官网</span> <img
+							class="img-r" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+							alt="右箭头"> </a></div>
 					</div>
 
 					<div class="article">
@@ -67,8 +55,7 @@
 
 						<p><span class="published">发布于：2021-1-6-1</span></p>
 						<h1>可编辑的通讯录</h1>
-						<p>项目地址：<a href="http://zrx001.gitee.io/blog/web/project/2/index.html" target="_blank"
-								   class="url">http://zrx001.gitee.io/blog/web/project/2/index.html</a>
+						<p>项目地址：<a href="http://1.15.142.19/item/web/project/2/index.html" target="_blank" class="url">http://1.15.142.19/item/web/project/2/index.html</a>
 						</p>
 						<p>项目下载：<a href="http://1.15.142.19/item/web/project/2/可编辑的通讯录.zip">可编辑的通讯录.zip</a></p>
 						<p>&nbsp;</p>
@@ -233,24 +220,13 @@
 					</div>
 
 					<div class="skip-bottom">
-
-						<div class="previouPage">
-							<router-link :to="{name: 'I401001'}">
-								<img class="img-l"
-									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
-									 alt="左箭头">
-								<span class="span-txt">仿美团外卖页面</span>
-							</router-link>
-						</div>
-						<div class="nextPage">
-							<router-link :to="{name: 'I401003'}">
-								<span class="span-txt">仿项目官网</span>
-								<img class="img-l"
-									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
-									 alt="左箭头">
-							</router-link>
-						</div>
-
+						<div class="previouPage"><a href="401001"> <img class="img-l"
+																			src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
+																			alt="左箭头"> <span
+							class="span-txt">仿美团外卖页面</span></a></div>
+						<div class="nextPage"><a href="401003"><span class="span-txt">仿项目官网</span> <img
+							class="img-r" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+							alt="右箭头"> </a></div>
 					</div>
 
 				</div>
@@ -265,14 +241,7 @@
 
 <script>
 export default {
-	name: "401002",
-	data() {
-		return {
-			drawer: false,
-			direction: 'ltr',
-			widthSize: '70%'
-		}
-	}
+	name: "401002"
 }
 </script>
 
