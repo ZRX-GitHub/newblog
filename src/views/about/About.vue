@@ -62,7 +62,17 @@ export default {
 	methods: {
 		BodyFun() {
 			// 127：nav 47和footer 80的高度和
-			this.BodyHeight = (document.documentElement.clientHeight -127) + 'px';
+			let aboutHeight = document.getElementById("About").clientHeight;
+			let appHeight = document.documentElement.clientHeight;
+
+			if (aboutHeight < appHeight) {
+				this.BodyHeight = (appHeight - 127) + 'px';
+			} else {
+				this.BodyHeight = ''
+			}
+
+			// this.BodyHeight = (document.documentElement.clientHeight -127) + 'px';
+			// this.BodyHeight = (document.documentElement.clientHeight) + 'px';
 
 			// alert(this.BodyHeight);
 		}
