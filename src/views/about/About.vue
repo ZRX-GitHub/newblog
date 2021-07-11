@@ -67,10 +67,12 @@ export default {
 
 			if (aboutHeight < appHeight) {
 				this.BodyHeight = (appHeight - 127) + 'px';
+				// this.BodyHeight = appHeight + 'px';
 			} else {
-				this.BodyHeight = ''
+				this.BodyHeight = aboutHeight + 'px';
+				// alert(aboutHeight)
 			}
-
+			// alert(appHeight+'1111')
 			// this.BodyHeight = (document.documentElement.clientHeight -127) + 'px';
 			// this.BodyHeight = (document.documentElement.clientHeight) + 'px';
 
