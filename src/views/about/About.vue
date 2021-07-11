@@ -1,6 +1,6 @@
 <template>
 	<div id="About" >
-		<div class="main" v-bind:style="{height:BodyHeight}">
+		<div class="main" v-bind:style="{height:BodyHeight+'px'}">
 			<div class="about">
 
 				<div class="conceive">
@@ -66,17 +66,15 @@ export default {
 			let appHeight = document.documentElement.clientHeight;
 
 			if (aboutHeight < appHeight) {
-				this.BodyHeight = (appHeight - 127) + 'px';
+				this.BodyHeight = (appHeight - 127);
+				alert(appHeight +'appHeight')
 				// this.BodyHeight = appHeight + 'px';
 			} else {
-				this.BodyHeight = aboutHeight + 'px';
-				// alert(aboutHeight)
+				this.BodyHeight = aboutHeight;
+				alert(aboutHeight+'aboutHeight')
 			}
-			// alert(appHeight+'1111')
-			// this.BodyHeight = (document.documentElement.clientHeight -127) + 'px';
-			// this.BodyHeight = (document.documentElement.clientHeight) + 'px';
 
-			// alert(this.BodyHeight);
+
 		}
 
 	}
