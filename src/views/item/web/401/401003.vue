@@ -69,7 +69,7 @@
 						<h1>仿项目官网</h1>
 						<p>项目地址：<a href="http://zrx001.gitee.io/blog/web/project/3/demo/index.html" target="_blank"
 								   class="url">http://zrx001.gitee.io/blog/web/project/3/demo/index.html</a></p>
-						<p>项目下载：<a href="http://1.15.142.19/item/web/project/3/仿项目官网.zip">仿项目官网.zip</a></p>
+<!--						<p>项目下载：<a href="http://zrx001.gitee.io/blog/web/project/3/仿项目官网.zip">仿项目官网.zip</a></p>-->
 						<h3>说明</h3>
 						<ol start="">
 							<li>适配PC、H5端；</li>

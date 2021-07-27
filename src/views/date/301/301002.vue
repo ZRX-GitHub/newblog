@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="D301002">
 		<div id="main">
 			<div class="nav-article">
 				<span>当前所在位置：</span>
@@ -42,6 +42,7 @@
 				<div class="data-classify-right">
 
 					<div class="skip-top">
+
 						<div class="previouPage">
 							<router-link :to="{name: 'D301001'}">
 								<img class="img-l"
@@ -49,7 +50,6 @@
 									 alt="左箭头">
 								<span class="span-txt">简介</span>
 							</router-link>
-
 						</div>
 
 					</div>
@@ -214,11 +214,8 @@ function read($pdo, $sql)
 					</div>
 
 					<div class="skip-bottom">
-						<div class="previouPage"><a href="301001"> <img class="img-l"
-																		src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
-																		alt="左箭头"> <span class="span-txt">简介</span></a>
-						</div>
-						<div class="nextPage">
+
+						<div class="previouPage">
 							<router-link :to="{name: 'D301001'}">
 								<img class="img-l"
 									 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
@@ -226,6 +223,7 @@ function read($pdo, $sql)
 								<span class="span-txt">简介</span>
 							</router-link>
 						</div>
+
 					</div>
 
 				</div>

@@ -103,17 +103,18 @@
 
 				<el-aside width="303px" class="right">
 
+<!--					主页——登录模块-->
 					<div class="indexLogin">
-						<el-form>
+						<el-form v-model="loginForm">
 							<p>登录</p>
 							<div>
 								<label for="indexLoginUsername">账&emsp;户：</label>
-								<input type="text" id="indexLoginUsername">
+								<input type="text" id="indexLoginUsername" v-model="username">
 							</div>
 
 							<div>
 								<label for="indexLoginPassword">密&emsp;码：</label>
-								<input type="text" id="indexLoginPassword">
+								<input type="text" id="indexLoginPassword" v-model="password">
 							</div>
 
 							<div class="indexLoginButton">
@@ -121,7 +122,7 @@
 										   round disabled>注册
 								</el-button>
 								<el-button native-type="submit" type="primary" size="mini"
-										   round>登录
+										   round @click="loginButton">登录
 								</el-button>
 							</div>
 						</el-form>
@@ -138,7 +139,7 @@
 								<el-input
 									type="textarea"
 									:autosize="{ minRows: 2}"
-									placeholder="请输入内容"
+									placeholder="请输入留言内容"
 									maxlength="360"
 									v-model="leavemessage.lemessage">
 								</el-input>
@@ -170,10 +171,6 @@
 </template>
 
 <style scoped src="../assets/css/index.css"></style>
-
-<script>
-setInterval("document.getElementById('datetime').innerHTML=new Date().toLocaleString();", 1000);
-</script>
 
 <script>
 export default {
@@ -209,13 +206,17 @@ export default {
 			leaveMessage: '',
 			leaveMessageLength: '',
 			// 右侧--登录
-			formInline: {
-				user: ''
-			},
+			// loginForm: {
+			// 	username: '',
+			// 	password: ''
+			// },
+			username: '',
+			password: '',
 			// 右侧--留言文本框
 			textarea: '',
 			containerMainHeight: '',
-			hh: 0
+			hh: 0,
+			// loginText: ''
 
 
 		}
@@ -242,10 +243,22 @@ export default {
 	},
 	methods: {
 		time() {
-			// 刷新时间
-			setInterval(function () {
-				document.getElementById('indexTopTextTime').innerHTML=new Date().toLocaleString();
-			},1000)
+			let timer = null;
+			let currentUrl = window.location.pathname;
+
+			if (currentUrl === '/') {
+				// 刷新时间
+				timer = setInterval(function () {
+					currentUrl =  window.location.pathname;
+					if (currentUrl !== '/') {
+						clearInterval(timer);
+					}
+					document.getElementById('indexTopTextTime').innerHTML=new Date().toLocaleString();
+				},1000)
+			} else {
+				clearInterval(timer)
+			}
+
 		},
 		imgLoad() {
 			this.$nextTick(() => {
@@ -260,6 +273,8 @@ export default {
 		leMessageDateText() {
 			let _this = this;
 			// 从数据库获取留言内容
+
+			// 云服务器环境
 			axios.request('http://1.15.142.19/leavemessage/findAll').then(function (resp) {
 				// console.log(resp.data);
 
@@ -278,6 +293,28 @@ export default {
 
 
 			})
+
+
+			// // 本地环境
+			// axios.request('http://localhost:8181/leavemessage/findAll').then(function (resp) {
+			// 	// console.log(resp.data);
+			//
+			// 	// alert(resp.data.length)
+			// 	_this.hh = resp.data.length;
+			//
+			// 	for (let i = 0; i < resp.data.length; i++) {
+			// 		// 留言板数据库的数据
+			// 		_this.leaveMessageDate.push({
+			// 			lename: resp.data[i].lename,
+			// 			lemessage: resp.data[i].lemessage,
+			// 			letime: resp.data[i].letime
+			// 		});
+			// 	}
+			// 	_this.leaveMessageDate.reverse();
+			//
+			//
+			// })
+
 		},
 		load() {
 			// alert(this.leaveMessageLength)
@@ -303,7 +340,23 @@ export default {
 			// 	this.count += 1;
 			// }
 		},
-		// 添加留言--按钮
+
+		// 主页——登录--按钮
+		loginButton() {
+			let _this = this;
+			axios.post('http://localhost:8181/login',_this.username).then(function (resp) {
+				if (resp === 'succeed') {
+					alert("登录成功！")
+				} else {
+					alert("登陆失败！")
+				}
+			}).catch(function () {
+				alert("登陆异常！")
+			})
+			// alert(this.username+'\n'+this.password)
+		},
+
+		// 主页——添加留言--按钮
 		aa() {
 
 
@@ -318,12 +371,18 @@ export default {
 			// // 提交成功，重置
 			// if (!lename || !lemessage) return;
 
-			// axios.post('http://localhost:8080/leavemessage/addLeaveMessage', _this.leavemessage);
+
+			// 云服务器环境
 			axios.post('http://1.15.142.19/leavemessage/addLeaveMessage', _this.leavemessage).then(function () {
 				// window.history.back(-1);
 				window.location.href = 'http://1.117.171.185/'
 			})
 			window.location.href = 'http://1.117.171.185/'
+
+			// // 本地环境
+			// axios.post('http://localhost:8181/leavemessage/addLeaveMessage', _this.leavemessage).then(function () {
+			// 	// window.history.back(-1);
+			// })
 		},
 		information() {
 			this.$message({

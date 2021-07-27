@@ -55,9 +55,9 @@
 
 						<p><span class="published">发布于：2021-1-6-1</span></p>
 						<h1>可编辑的通讯录</h1>
-						<p>项目地址：<a href="http://1.15.142.19/item/web/project/2/index.html" target="_blank" class="url">http://1.15.142.19/item/web/project/2/index.html</a>
+						<p>项目地址：<a href="http://zrx001.gitee.io/blog/web/project/2/index.html" target="_blank" class="url">http://zrx001.gitee.io/blog/web/project/2/index.html</a>
 						</p>
-						<p>项目下载：<a href="http://1.15.142.19/item/web/project/2/可编辑的通讯录.zip">可编辑的通讯录.zip</a></p>
+<!--						<p>项目下载：<a href="http://1.15.142.19/item/web/project/2/可编辑的通讯录.zip">可编辑的通讯录.zip</a></p>-->
 						<p>&nbsp;</p>
 						<p>bug：</p>
 						<p>序号自增减存在一点小问题。</p>
@@ -241,7 +241,14 @@
 
 <script>
 export default {
-	name: "401002"
+	name: "401002",
+	data() {
+		return {
+			drawer: false,
+			direction: 'ltr',
+			widthSize: '70%'
+		}
+	}
 }
 </script>
 

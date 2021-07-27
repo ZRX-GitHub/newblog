@@ -1,8 +1,6 @@
 <template>
 	<div id="Date">
 
-		<p style="color: red;text-align: center;margin-top: 12px">本目录所属的重构目前仅重构了php资料模块</p>
-
 		<div class="main">
 
 			<div class="data-left">
@@ -16,18 +14,18 @@
 						<router-link :to="{name:'D301001'}">
 							<p id="1" class="classify">PHP</p>
 						</router-link>
-						<a href="date/302/302001">
+						<router-link :to="{name:'D302001'}">
 							<p id="2" class="classify">Java</p>
+						</router-link>
+						<a href="" title="数据找回中">
+							<p id="3" class="classify" style="color: red">JavaWeb</p>
 						</a>
-						<a href="date/303/303001">
-							<p id="3" class="classify">JavaWeb</p>
+						<a href="" title="数据找回中">
+							<p id="4" class="classify" style="color: red">HTML\JS\CSS</p>
 						</a>
-						<a href="date/304/304001">
-							<p id="4" class="classify">HTML\JS\CSS</p>
-						</a>
-						<a href="date/305/305001">
+						<router-link :to="{name:'D305001'}">
 							<p id="5" class="classify">Oracle</p>
-						</a>
+						</router-link>
 						<!-- <a href="306/306001">
 							<p id="6" class="classify">Web项目</p>
 						</a> -->
@@ -37,9 +35,9 @@
 						<!-- <a href="307/308001">
 							<p id="7" class="classify">Java Web 项目搭建</p>
 						</a> -->
-						<a href="other/1">
+						<router-link :to="{name:'Dother1'}">
 							<p class="classify">其余资料</p>
-						</a>
+						</router-link>
 					</div>
 
 					<div class="document-class">
@@ -123,7 +121,9 @@
 				<div class="data-plate">
 					<div class="line-left"></div>
 					<span>PHP</span>
-					<div class="more"><router-link :to="{name: 'D301001'}">查看更多</router-link></div>
+					<div class="more">
+						<router-link :to="{name: 'D301001'}">查看更多</router-link>
+					</div>
 					<div class="data-plate-line"></div>
 					<div class="wrapper3">
 
@@ -145,7 +145,7 @@
 									利用php+mysql+工具&#40;vscode+navicat+xampp&#41;搭建php留言板</p>
 							</div>
 						</router-link>
-						<a href="xx" class="information3 informations">
+						<a href="xx" class="information3 informations" style="pointer-events: none" disabled="true">
 							<span class="informations-title">xx</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -160,21 +160,20 @@
 
 				<div class="data-plate">
 					<div class="line-left"></div>
-					<span>Java</span><a href="">
-					<div class="more"><a href="date/302/302001">查看更多</a></div>
-				</a>
+					<span>Java</span>
+					<div class="more"><router-link :to="{name:'D302001'}">查看更多</router-link></div>
 					<div class="data-plate-line"></div>
 					<div class="wrapper9">
 
-						<a href="date/302/302001" class="information1 informations">
+						<router-link :to="{name:'D302001'}" class="information1 informations">
 							<span class="informations-title">简介</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">CMD执行java程序:cmd简单切换，win+ r：打开cmd命令台，cmd打开默认进入C盘。" E:
 									",进入E盘根目录。</p>
 							</div>
-						</a>
-						<a href="date/302/302002" class="information2 informations">
+						</router-link>
+						<router-link :to="{name:'D302002'}" class="information2 informations">
 							<span class="informations-title">Java规则</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -185,8 +184,8 @@
 									引用数据类型：包括 类、数组、接口。
 								</p>
 							</div>
-						</a>
-						<a href="date/302/302003" class="information3 informations">
+						</router-link>
+						<router-link :to="{name:'D302003'}" class="information3 informations">
 							<span class="informations-title">运算符</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -195,9 +194,9 @@
 									float、int，自动转换float。
 									double > float > long > int > short 、char、byte</p>
 							</div>
-						</a>
+						</router-link>
 
-						<a href="date/302/302004" class="information4 informations">
+						<router-link :to="{name:'D302004'}" class="information4 informations">
 							<span class="informations-title">方法</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -217,15 +216,15 @@
 									- 参数：可设置无，也可以设置有。
 									- return xx：根据需要填写，也可能不需要填写return。</p>
 							</div>
-						</a>
-						<a href="date/302/302005" class="information5 informations">
+						</router-link>
+						<router-link :to="{name:'D302005'}" class="information5 informations">
 							<span class="informations-title">流程控制</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">顺序结构、选择结构、循环结构</p>
 							</div>
-						</a>
-						<a href="date/302/302006" class="information6 informations">
+						</router-link>
+						<router-link :to="{name:'D302006'}" class="information6 informations">
 							<span class="informations-title">数组</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -244,17 +243,17 @@
 
 									数组名：存储开辟的内存空间的内存首地址，数值是一个连续的空间。</p>
 							</div>
-						</a>
+						</router-link>
 
-						<a href="date/302/302007" class="information7 informations">
+						<router-link :to="{name:'D302007'}" class="information7 informations">
 							<span class="informations-title">继承类</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">
 									子类继承父类的特性、属性和方法被继承的条件、方法重写（也叫方法覆盖）和方法重载有什么区别、super和this关键字+构造方法。</p>
 							</div>
-						</a>
-						<a href="date/302/302008" class="information8 informations">
+						</router-link>
+						<router-link :to="{name:'D302008'}" class="information8 informations">
 							<span class="informations-title">封装类</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -272,8 +271,8 @@
 
 								</p>
 							</div>
-						</a>
-						<a href="date/302/302009" class="information9 informations">
+						</router-link>
+						<router-link :to="{name:'D302009'}" class="information9 informations">
 							<span class="informations-title">抽象类</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -288,34 +287,35 @@
 
 									在Java中抽象类表示的是一种继承关系，一个类只能继承一个抽象类，而一个类却可以实现多个接口。</p>
 							</div>
-						</a>
+						</router-link>
 
 
 					</div>
 				</div>
 
-				<div class="data-plate">
+				<div class="data-plate"  disabled="true" style="pointer-events: none">
 					<div class="line-left"></div>
-					<span>JavaWeb</span>
-					<div class="more"><a href="date/303/303001">查看更多</a></div>
+					<span style="color: red">JavaWeb</span>
+					<p style="color: red;text-align: center">数据找回中</p>
+					<div class="more"><a href="">查看更多</a></div>
 					<div class="data-plate-line"></div>
 					<div class="wrapper6">
 
-						<a href="date/303/303001" class="information1 informations">
+						<a href="" class="information1 informations">
 							<span class="informations-title">JavaWeb</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">软件架构、B/S架构。</p>
 							</div>
 						</a>
-						<a href="date/303/303002" class="information2 informations">
+						<a href="" class="information2 informations">
 							<span class="informations-title">Tomcat配置</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">网络通信三要素、web服务器、Tomcat服务器的搭建。</p>
 							</div>
 						</a>
-						<a href="date/303/303003" class="information3 informations">
+						<a href="" class="information3 informations">
 							<span class="informations-title">Tomcat项目部署</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -323,7 +323,7 @@
 							</div>
 						</a>
 
-						<a href="date/303/303004" class="information4 informations">
+						<a href="" class="information4 informations">
 							<span class="informations-title">Servlet项目部署</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -331,14 +331,14 @@
 									Servlet是什么?、Servlet任务、Tomcat和Servlet的关系、实现示例-Servlet、实现示例-HttpServlet、实现Servlet接口过程、继承HttpServlet抽象类过程。</p>
 							</div>
 						</a>
-						<a href="date/303/303005" class="information5 informations">
+						<a href="" class="information5 informations">
 							<span class="informations-title">xxx</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">xxx</p>
 							</div>
 						</a>
-						<a href="date/303/303006" class="information6 informations">
+						<a href="" class="information6 informations">
 							<span class="informations-title">xxx</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -352,15 +352,15 @@
 					</div>
 				</div>
 
-				<div class="data-plate">
+				<div class="data-plate"  disabled="true" style="pointer-events: none">
 					<div class="line-left"></div>
-					<span>HTML\CSS\JS</span><a href="">
-					<div class="more"><a href="date/304/304001">查看更多</a></div>
-				</a>
+					<span style="color: red">HTML\CSS\JS</span>
+					<p style="color: red;text-align: center">数据找回中</p>
+					<div class="more"><a href="">查看更多</a></div>
 					<div class="data-plate-line"></div>
 					<div class="wrapper6">
 
-						<a href="date/304/304001" class="information1 informations">
+						<a href="" class="information1 informations">
 							<span class="informations-title">HTML基础</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -369,7 +369,7 @@
 								</p>
 							</div>
 						</a>
-						<a href="date/304/304002" class="information2 informations">
+						<a href="" class="information2 informations">
 							<span class="informations-title">CSS基础</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -378,7 +378,7 @@
 								</p>
 							</div>
 						</a>
-						<a href="date/304/304003" class="information3 informations">
+						<a href="" class="information3 informations">
 							<span class="informations-title">JS基础1</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -389,7 +389,7 @@
 							</div>
 						</a>
 
-						<a href="date/304/304004" class="information4 informations">
+						<a href="" class="information4 informations">
 							<span class="informations-title">JS基础2</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -398,7 +398,7 @@
 								</p>
 							</div>
 						</a>
-						<a href="date/304/304005" class="information5 informations">
+						<a href="" class="information5 informations">
 							<span class="informations-title">CSS属性的继承性</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -411,7 +411,7 @@
 								</p>
 							</div>
 						</a>
-						<a href="date/304/304006" class="information6 informations">
+						<a href="" class="information6 informations">
 							<span class="informations-title">轮播图、走马灯</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -431,11 +431,11 @@
 				<div class="data-plate">
 					<div class="line-left"></div>
 					<span>Oracle</span>
-					<div class="more"><a href="date/305/305001">查看更多</a></div>
+					<div class="more"><router-link :to="{name:'D305001'}">查看更多</router-link></div>
 					<div class="data-plate-line"></div>
 					<div class="wrapper9">
 
-						<a href="date/305/305001" class="information1 informations">
+						<router-link :to="{name:'D305001'}" class="information1 informations">
 							<span class="informations-title">数据表的增删改命令</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -446,8 +446,8 @@
 									*/
 									-- 创建一个用户表： id ( 主键：唯一非空 ) 、account 、password 、create_time 、height 、phone</p>
 							</div>
-						</a>
-						<a href="date/305/305002" class="information2 informations">
+						</router-link>
+						<router-link :to="{name:'D305002'}" class="information2 informations">
 							<span class="informations-title">常用函数</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -459,8 +459,8 @@
 									-- 查询表中的个别类型的数据
 									select ename,sal from emp;</p>
 							</div>
-						</a>
-						<a href="date/305/305003" class="information3 informations">
+						</router-link>
+						<router-link :to="{name:'D305003'}" class="information3 informations">
 							<span class="informations-title">多表查询</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -481,25 +481,25 @@
 									select e.* ,（select d.dname from dept d where d.deptno = e.deptno）as dname from emp
 									e;</p>
 							</div>
-						</a>
+						</router-link>
 
-						<a href="date/305/305004" class="information4 informations">
+						<router-link :to="{name:'D305004'}" class="information4 informations">
 							<span class="informations-title">where和having的区别</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">
 									类型：“where”是一个约束声明，在查询数据库的结果返回之前对数据库中的查询条件进行约束，即在结果返回之前起作用，且“where”后面不能写“聚合函数”。</p>
 							</div>
-						</a>
-						<a href="date/305/305005" class="information5 informations">
+						</router-link>
+						<router-link :to="{name:'D305005'}" class="information5 informations">
 							<span class="informations-title">高级查询</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">
 									高级查询、dbms_random.value()、null first/last、over()。</p>
 							</div>
-						</a>
-						<a href="date/305/305006" class="information6 informations">
+						</router-link>
+						<router-link :to="{name:'D305006'}" class="information6 informations">
 							<span class="informations-title">数据字典之约束</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -523,9 +523,9 @@
 									create_time timestamp default sysdata
 									);</p>
 							</div>
-						</a>
+						</router-link>
 
-						<a href="date/305/305007" class="information7 informations">
+						<router-link :to="{name:'D305007'}" class="information7 informations">
 							<span class="informations-title">性能优化</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -537,8 +537,8 @@
 									PS：“%”、“_”的位置可任意。
 								</p>
 							</div>
-						</a>
-						<a href="date/305/305008" class="information8 informations">
+						</router-link>
+						<router-link :to="{name:'D305008'}" class="information8 informations">
 							<span class="informations-title">索引</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -553,8 +553,8 @@
 
 									select * from tb_user;</p>
 							</div>
-						</a>
-						<a href="date/305/305009" class="information9 informations">
+						</router-link>
+						<router-link :to="{name:'D305009'}" class="information9 informations">
 							<span class="informations-title">基本编程</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -573,7 +573,7 @@
 									逻辑部分...
 									end;</p>
 							</div>
-						</a>
+						</router-link>
 
 
 					</div>
@@ -643,26 +643,28 @@
 				<div class="data-plate">
 					<div class="line-left"></div>
 					<span>其余资料</span>
-					<div class="more"><a href="date/other/1">查看更多</a></div>
+					<div class="more">
+						<router-link :to="{name:'Dother1'}">查看更多</router-link>
+					</div>
 					<div class="data-plate-line"></div>
-					<div class="wrapper9">
+					<div class="wrapper6">
 
-						<a href="date/other/1" class="information1 informations">
+						<router-link :to="{name: 'Dother1'}" class="information1 informations">
 							<span class="informations-title">系统安装</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">
 									windows系统的安装有两种方法，分别是硬盘安装和U盘启动器安装。建议提前下载好想要安装的windows系统。</p>
 							</div>
-						</a>
-						<a href="date/other/2" class="information2 informations">
+						</router-link>
+						<router-link :to="{name:'Dother2'}" class="information2 informations">
 							<span class="informations-title">github个人建站+绑定域名</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">github建站、绑定域名。</p>
 							</div>
-						</a>
-						<a href="date/other/3" class="information3 informations">
+						</router-link>
+						<router-link :to="{name:'Dother3'}" class="information3 informations">
 							<span class="informations-title">树</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -675,16 +677,16 @@
 									4、从节点（包括根）到其任何后代NULL节点(叶子结点下方挂的两个空节点，并且认为他们是黑色的)的每条路径都具有相同数量的黑色节点。
 								</p>
 							</div>
-						</a>
+						</router-link>
 
-						<a href="date/other/4" class="information4 informations">
+						<router-link :to="{name:'Dother4'}" class="information4 informations">
 							<span class="informations-title">原码、反码、补码三者之间的关系</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">在说明它们三者之间的关系之前，让我们先来了解一下怎么定义进制的表示。</p>
 							</div>
-						</a>
-						<a href="date/other/5" class="information5 informations">
+						</router-link>
+						<router-link :to="{name:'Dother5'}" class="information5 informations">
 							<span class="informations-title">idea快捷键</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
@@ -705,53 +707,62 @@
 									Ctrl + P 方法参数提示显示 （必备）
 								</p>
 							</div>
-						</a>
-						<a href="date/other/6" class="information6 informations">
-							<span class="informations-title">Oracle配置</span>
+						</router-link>
+						<router-link :to="{}" class="information6 informations"  disabled="true" style="pointer-events: none">
+							<span class="informations-title" style="color: red">Oracle配置——数据找回中</span>
 							<div class="data-plate-informations-line"></div>
 							<div class="informations-div-text">
 								<p class="informations-text-sketch">
 									什么是数据库？、SQL语言、Oracle的版本、Docker简单入门、docker操作oracle、安装oracle客户端、配置PL/SQL客户端、修改CentOS的镜像站点。
+								</p>
+							</div>
+						</router-link>
+						<!--						<a href="date/other/6" class="information6 informations">-->
+						<!--							<span class="informations-title">Oracle配置</span>-->
+						<!--							<div class="data-plate-informations-line"></div>-->
+						<!--							<div class="informations-div-text">-->
+						<!--								<p class="informations-text-sketch">-->
+						<!--									什么是数据库？、SQL语言、Oracle的版本、Docker简单入门、docker操作oracle、安装oracle客户端、配置PL/SQL客户端、修改CentOS的镜像站点。-->
 
-								</p>
-							</div>
-						</a>
+						<!--								</p>-->
+						<!--							</div>-->
+						<!--						</a>-->
 
-						<a href="date/other/7" class="information7 informations">
-							<span class="informations-title">Linux面试篇</span>
-							<div class="data-plate-informations-line"></div>
-							<div class="informations-div-text">
-								<p class="informations-text-sketch">
-									1. 作系统是什么，他的功能，简单介绍一下linux
-									2. 作系统的中断是什么，简述一下软中断和硬中断是什么以及发生后的表现
-									3. inux启动过程，是否可以在单片机中开发
-									4. 见的linux的指令**
-									5. inux系统里怎么查询一个文件底下的指定字符
-									6. inux下怎么查看某段时间的日志文件内容
-									7. 知道DHCP吗？
-									8. 如何查看8080端口是否被占用？
-									9. 如何查看内存资源？
-								</p>
-							</div>
-						</a>
-						<a href="date/other/8" class="information8 informations">
-							<span class="informations-title">网络知识面试篇</span>
-							<div class="data-plate-informations-line"></div>
-							<div class="informations-div-text">
-								<p class="informations-text-sketch">
-									网关、网桥、路由器、中继器作用、实现以及对应的osi层？MAC地址是什么？webSocket是什么？常见的协议有哪些？什么是arp协议？FTP依赖于哪种协议？ip和域名分别是什么，计算机上网如何获取ip？http和https是什么，他们的功能以及区别？TCP、UDP区别？UDP怎么确保正确传输？udp传输图片怎么实现，超出大小怎么办？网络通讯中，端口有什么含义。端口的取值范围？
-								</p>
-							</div>
-						</a>
-						<a href="xxx" class="information9 informations">
-							<span class="informations-title">xxx</span>
-							<div class="data-plate-informations-line"></div>
-							<div class="informations-div-text">
-								<p class="informations-text-sketch">
-									xxx
-								</p>
-							</div>
-						</a>
+						<!--						<a href="date/other/7" class="information7 informations">-->
+						<!--							<span class="informations-title">Linux面试篇</span>-->
+						<!--							<div class="data-plate-informations-line"></div>-->
+						<!--							<div class="informations-div-text">-->
+						<!--								<p class="informations-text-sketch">-->
+						<!--									1. 作系统是什么，他的功能，简单介绍一下linux-->
+						<!--									2. 作系统的中断是什么，简述一下软中断和硬中断是什么以及发生后的表现-->
+						<!--									3. inux启动过程，是否可以在单片机中开发-->
+						<!--									4. 见的linux的指令**-->
+						<!--									5. inux系统里怎么查询一个文件底下的指定字符-->
+						<!--									6. inux下怎么查看某段时间的日志文件内容-->
+						<!--									7. 知道DHCP吗？-->
+						<!--									8. 如何查看8080端口是否被占用？-->
+						<!--									9. 如何查看内存资源？-->
+						<!--								</p>-->
+						<!--							</div>-->
+						<!--						</a>-->
+						<!--						<a href="date/other/8" class="information8 informations">-->
+						<!--							<span class="informations-title">网络知识面试篇</span>-->
+						<!--							<div class="data-plate-informations-line"></div>-->
+						<!--							<div class="informations-div-text">-->
+						<!--								<p class="informations-text-sketch">-->
+						<!--									网关、网桥、路由器、中继器作用、实现以及对应的osi层？MAC地址是什么？webSocket是什么？常见的协议有哪些？什么是arp协议？FTP依赖于哪种协议？ip和域名分别是什么，计算机上网如何获取ip？http和https是什么，他们的功能以及区别？TCP、UDP区别？UDP怎么确保正确传输？udp传输图片怎么实现，超出大小怎么办？网络通讯中，端口有什么含义。端口的取值范围？-->
+						<!--								</p>-->
+						<!--							</div>-->
+						<!--						</a>-->
+						<!--						<a href="xxx" class="information9 informations">-->
+						<!--							<span class="informations-title">xxx</span>-->
+						<!--							<div class="data-plate-informations-line"></div>-->
+						<!--							<div class="informations-div-text">-->
+						<!--								<p class="informations-text-sketch">-->
+						<!--									xxx-->
+						<!--								</p>-->
+						<!--							</div>-->
+						<!--						</a>-->
 
 					</div>
 				</div>

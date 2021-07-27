@@ -35,6 +35,18 @@ Vue.component('MyFooter', MyFooter);
 import catalog301 from './views/date/301/data-classify-catalog-301';
 Vue.component('catalog301', catalog301);
 
+// 302目录
+import catalog302 from './views/date/302/data-classify-catalog-302';
+Vue.component('catalog302', catalog302);
+
+// 305目录
+import catalog305 from './views/date/305/data-classify-catalog-305';
+Vue.component('catalog305', catalog305);
+
+// other目录
+import catalogother from './views/date/other/data-classify-catalog-other';
+Vue.component('catalogother',catalogother);
+
 // 401目录
 import catalog401 from './views/item/web/401/item-classify-catalog-401';
 Vue.component('catalog401', catalog401);

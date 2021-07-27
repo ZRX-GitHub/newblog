@@ -50,8 +50,8 @@
 
 						<p><span class="published">发布于：2021-1-1-1</span></p>
 						<h1>仿美团页面</h1>
-						<p style="text-align: left;">项目地址：<a href="http://1.15.142.19/item/web/project/1/demo/index.html" target="_blank" class="url">http://1.15.142.19/item/web/project/1/demo/index.html</a></p>
-						<p>项目下载：<a href="http://1.15.142.19/item/web/project/1/美团外卖页面.zip">美团外卖页面.zip</a></p>
+						<p style="text-align: left;">项目地址：<a href="http://zrx001.gitee.io/blog/web/project/1/demo/index.html" target="_blank" class="url">http://zrx001.gitee.io/blog/web/project/1/demo/index.html</a></p>
+<!--						<p>项目下载：<a href="http://1.15.142.19/item/web/project/1/美团外卖页面.zip">美团外卖页面.zip</a></p>-->
 						<p>介绍</p>
 						<ul>
 							<li>
@@ -1586,7 +1586,14 @@
 
 <script>
 export default {
-	name: "401001"
+	name: "401001",
+	data() {
+		return {
+			drawer: false,
+			direction: 'ltr',
+			widthSize: '70%'
+		}
+	}
 }
 </script>
 

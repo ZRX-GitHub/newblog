@@ -61,7 +61,7 @@
 						<h1>Vue实现记事本</h1>
 						<p>项目地址：<a href="http://zrx001.gitee.io/blog/web/project/4/demo/index.html" target="_blank"
 								   class="url">http://zrx001.gitee.io/blog/web/project/4/demo/index.html</a></p>
-						<p>项目下载：<a href="http://1.15.142.19/item/web/project/4/Vue实现记事本.zip">Vue实现记事本.zip</a></p>
+<!--						<p>项目下载：<a href="http://1.15.142.19/item/web/project/4/Vue实现记事本.zip">Vue实现记事本.zip</a></p>-->
 						<h4>源代码</h4>
 						<pre><code class="language-html" lang="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;

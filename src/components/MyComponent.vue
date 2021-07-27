@@ -46,7 +46,7 @@ export default {
 				setTimeout(() => {
 					tag = false;
 				}, 200);
-			};
+			}
 
 			let timer = setInterval(function () {
 				//获取滚动条的滚动高度

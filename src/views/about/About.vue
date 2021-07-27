@@ -1,6 +1,6 @@
 <template>
 	<div id="About" >
-		<div class="main" v-bind:style="{height:BodyHeight+'px'}">
+		<div class="main">
 			<div class="about">
 
 				<div class="conceive">
@@ -42,7 +42,7 @@
 		</div>
 
 
-		<my-footer></my-footer>
+<!--		<my-footer></my-footer>-->
 
 	</div>
 </template>
@@ -50,34 +50,35 @@
 
 <script>
 export default {
-	name: "About",
-	data() {
-		return {
-			BodyHeight: ''
-		}
-	},
-	created() {
-		this.BodyFun();
-	},
-	methods: {
-		BodyFun() {
-			// 127：nav 47和footer 80的高度和
-			let aboutHeight = document.getElementById("About").clientHeight;
-			let appHeight = document.documentElement.clientHeight;
+	name: "About"
 
-			if (aboutHeight < appHeight) {
-				this.BodyHeight = (appHeight - 127);
-				alert(appHeight +'appHeight')
-				// this.BodyHeight = appHeight + 'px';
-			} else {
-				this.BodyHeight = aboutHeight;
-				alert(aboutHeight+'aboutHeight')
-			}
-
-
-		}
-
-	}
+	// data() {
+	// 	return {
+	// 		BodyHeight: ''
+	// 	}
+	// },
+	// created() {
+	// 	this.BodyFun();
+	// },
+	// methods: {
+	// 	BodyFun() {
+	// 		// 127：nav 47和footer 80的高度和
+	// 		let aboutHeight = document.getElementById("About").clientHeight;
+	// 		let appHeight = document.documentElement.clientHeight;
+	//
+	// 		if (aboutHeight < appHeight) {
+	// 			this.BodyHeight = (appHeight - 127);
+	// 			alert(appHeight +'appHeight')
+	// 			// this.BodyHeight = appHeight + 'px';
+	// 		} else {
+	// 			this.BodyHeight = aboutHeight;
+	// 			alert(aboutHeight+'aboutHeight')
+	// 		}
+	//
+	//
+	// 	}
+	//
+	// }
 
 }
 </script>

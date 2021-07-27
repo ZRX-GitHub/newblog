@@ -1,0 +1,392 @@
+<template>
+	<div id="D302007">
+		<div id="main">
+			<div class="nav-article">
+				<span>当前所在位置：</span>
+				<router-link :to="{name: '资料'}">资料</router-link>
+				<span> &gt; </span>
+				<router-link :to="{name: 'D302001'}">Java</router-link>
+				<span> &gt; </span>
+				<router-link :to="{name: 'D302007'}">继承类</router-link>
+			</div>
+			<div class="main-content">
+
+				<div class="data-classify-left">
+
+					<el-button @click="drawer = true" type="primary" style="margin-left: 16px;background: #66B1FF"
+							   id="app-catalog">
+						目<br>录
+					</el-button>
+
+					<el-drawer
+						title="目录"
+						:visible.sync="drawer"
+						:direction="direction"
+						:size="widthSize"
+						:show-close="false"
+						id="app-catalog-text">
+						<div class="catalog">
+							<!--							<p class="text">目 &nbsp; 录</p>-->
+							<catalog302></catalog302>
+						</div>
+					</el-drawer>
+
+					<div class="catalog">
+						<p class="text">目 &nbsp; 录</p>
+						<catalog302></catalog302>
+					</div>
+
+				</div>
+
+
+				<div class="data-classify-right">
+
+					<div class="skip-top">
+
+						<div class="previouPage">
+							<div class="previouPage">
+								<router-link :to="{name:'D302006'}"><img class="img-l"
+																		 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
+																		 alt="左箭头"> <span
+									class="span-txt">数组</span></router-link>
+							</div>
+							<div class="nextPage">
+								<router-link :to="{name:'D302008'}"><span class="span-txt">封装类</span> <img
+									class="img-r"
+									src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+									alt="右箭头">
+								</router-link>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="article">
+						<!-- ↓  博客输入  ↓ -->
+
+						<p><span class="published">发布于:2020-11-26-2</span></p>
+						<h1>继承类</h1>
+						<p>定义：继承就是子类继承父类的属性和方法，使得子类也可以拥有父类的特性。子类通过<strong>extends</strong>关键字来继承父类。</p>
+						<pre><code class="language-java" lang="java">public class Fu {  // 这是一个父类
+
+}
+
+public class Child extends Fu {  // 这是一个子类
+
+}
+</code></pre>
+						<p>&nbsp;</p>
+						<p>好处：</p>
+						<ol>
+							<li>
+								<p>提高代码的复用性；</p>
+							</li>
+							<li>
+								<p>类与类之间产生了关系，是多态的前提。</p>
+								<p>&nbsp;</p>
+							</li>
+
+						</ol>
+						<p><strong>子类继承父类的特性：</strong></p>
+						<ul>
+							<li>子类拥有父类非 private 的属性、方法。</li>
+							<li>子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。</li>
+							<li>子类可以用自己的方式实现父类的方法。</li>
+							<li>Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C 类，所以按照关系就是 C 类是 B
+								类的父类，B 类是 A 类的父类，这是 Java 继承区别于 C++ 继承的一个特性。
+							</li>
+							<li>提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。</li>
+
+						</ul>
+						<p>&nbsp;</p>
+						<p><strong>属性和方法被继承的条件？</strong></p>
+						<p>（1）<strong>默认修饰符</strong>(public)，同一个包下可以被继承。<strong>protected</strong>，同一个包下可以被继承。<strong>private</strong>，不会被继承；
+						</p>
+						<p>（2）属性父子有同名的情况：在子类中我们可以通过super关键字取获取父类对象中属性；</p>
+						<p>（3）方法同名的情况（方法重写，也叫方法覆盖）：访问修饰符（子类中），必须比父类的范围要扩大或者相同返回值、方法名、参数列表要一样。PS：哪些方法可以被重写（1、被继承的方法可以被重写
+							2、protected修饰的方式也可以被重新，即使不再同一个包下）。</p>
+						<p>&nbsp;</p>
+						<h3>方法重写（也叫方法覆盖）和方法重载有什么区别？</h3>
+						<p><strong>重写：</strong></p>
+						<p>重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。<strong>即外壳不变，核心重写！</strong></p>
+						<p>重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法。</p>
+						<p>&nbsp;</p>
+						<p>重写的规则：</p>
+						<ul>
+							<li>
+								<p>参数列表与被重写方法的参数列表必须完全相同。</p>
+							</li>
+							<li>
+								<p>返回类型与被重写方法的返回类型可以不相同，但是必须是父类返回值的派生类（java5 及更早版本返回类型要一样，java7 及更高版本可以不同）。</p>
+							</li>
+							<li>
+								<p>访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为 public，那么在子类中重写该方法就不能声明为 protected。</p>
+							</li>
+							<li>
+								<p>父类的成员方法只能被它的子类重写。</p>
+							</li>
+							<li>
+								<p>声明为 final 的方法不能被重写。</p>
+							</li>
+							<li>
+								<p>声明为 static 的方法不能被重写，但是能够被再次声明。</p>
+							</li>
+							<li>
+								<p>子类和父类在同一个包中，那么子类可以重写父类所有方法，除了声明为 private 和 final 的方法。</p>
+							</li>
+							<li>
+								<p>子类和父类不在同一个包中，那么子类只能够重写父类的声明为 public 和 protected 的非 final 方法。</p>
+							</li>
+							<li>
+								<p>重写的方法能够抛出任何非强制异常，无论被重写的方法是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者比被重写方法声明的更广泛的强制性异常，反之则可以。</p>
+							</li>
+							<li>
+								<p>构造方法不能被重写。</p>
+							</li>
+							<li>
+								<p>如果不能继承一个类，则不能重写该类的方法。</p>
+								<p>&nbsp;</p>
+							</li>
+
+						</ul>
+						<p><strong>重载：</strong></p>
+						<p>重载(overloading) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。</p>
+						<p>每个重载的方法（或者构造函数）都必须有一个独一无二的参数类型列表。</p>
+						<p>最常用的地方就是构造器的重载。</p>
+						<p>&nbsp;</p>
+						<p>重载的规则：</p>
+						<ul>
+							<li>被重载的方法必须改变参数列表(参数个数或类型不一样)；</li>
+							<li>被重载的方法可以改变返回类型；</li>
+							<li>被重载的方法可以改变访问修饰符；</li>
+							<li>被重载的方法可以声明新的或更广的检查异常；</li>
+							<li>方法能够在同一个类中或者在一个子类中被重载。</li>
+							<li>无法以返回值类型作为重载函数的区分标准。</li>
+
+						</ul>
+						<p>&nbsp;</p>
+						<p><strong>重写和重载的区别</strong></p>
+						<figure>
+							<table>
+								<thead>
+								<tr>
+									<th>区别点</th>
+									<th>重载方法</th>
+									<th>重写方法</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>参数列表</td>
+									<td>必须修改</td>
+									<td>一定不能修改</td>
+								</tr>
+								<tr>
+									<td>返回类型</td>
+									<td>可以修改</td>
+									<td>一定不能修改</td>
+								</tr>
+								<tr>
+									<td>异常</td>
+									<td>可以修改</td>
+									<td>可以减少或删除，一定不能抛出新的或者更广的异常</td>
+								</tr>
+								<tr>
+									<td>访问</td>
+									<td>可以修改</td>
+									<td>一定不能做更严格的限制（可以降低限制）</td>
+								</tr>
+								</tbody>
+							</table>
+						</figure>
+						<p>&lt;-- 父类--&gt;</p>
+						<pre><code class="language-java" lang="java">package test1;
+
+public class Fu {
+    public int num;  // 不加数据，默认为0
+    public String name;
+    public void show1() {
+        System.out.println(&quot;这是一个父类1！&quot; + num);
+    }
+
+    // 测试重写（见子类）
+    public void show5() {
+        System.out.print(&quot;这是一个父类——重写！&quot;);
+    }
+
+    // 测试重载
+    public void show7(int num, String name) {
+        System.out.println(&quot;方法重载1：&quot; + num + &quot; ， &quot; + name);
+    }
+    public void show7(String name, int num) {
+        System.out.println(&quot;方法重载2：&quot; + num + &quot; ， &quot; + name);
+    }
+
+}
+
+</code></pre>
+						<p>&lt;-- 子类 --&gt;</p>
+						<pre><code class="language-java" lang="java">package test1;
+
+public class Child extends Fu {
+
+    // 重写父类的show5方法
+    public void show5() {
+        super.show5();  // 父类的
+        System.out.println(&quot;这是一个重写子类3！&quot;);
+    }
+
+}
+
+</code></pre>
+						<p>&lt;-- 测试 --&gt;</p>
+						<pre><code class="language-java" lang="java">package test1;
+
+public class Test1 {
+    public static void main(String[] args) {
+        Child child = new Child();
+        Fu fu1 = new Fu();
+        fu1.show7(2, &quot;小明&quot;);  // 方法重载
+        fu1.show7(&quot;小红&quot;, 3);  // 方法重载
+        child.show5();  // 方法重写
+    }
+}
+</code></pre>
+						<p>运行结果</p>
+						<pre><code class="language-cmd" lang="cmd">方法重载1：2 ， 小明
+方法重载2：3 ， 小红
+这是一个父类——重写！这是一个重写子类3！
+
+Process finished with exit code 0
+</code></pre>
+						<p><strong>总结：</strong></p>
+						<p>方法的重写(Overriding)和重载(Overloading)是java多态性的不同表现，重写是父类与子类之间多态性的一种表现，重载可以理解成多态的具体表现形式。</p>
+						<ul>
+							<li>(1)方法重载是一个类中定义了多个方法名相同,而他们的参数的数量不同或数量相同而类型和次序不同,则称为方法的重载(Overloading)。</li>
+							<li>(2)方法重写是在子类存在方法与父类的方法的名字相同,而且参数的个数与类型一样,返回值也一样的方法,就称为重写(Overriding)。</li>
+							<li>(3)方法重载是一个类的多态性表现,而方法重写是子类与父类的一种多态性表现。</li>
+
+						</ul>
+						<p>以上内容来源于：<a url="https://www.runoob.com/java/java-override-overload.php"><a
+							href="https://www.runoob.com/java/java-override-overload.php" target="_blank" class="url">https://www.runoob.com/java/java-override-overload.php</a></a>
+						</p>
+						<p>&nbsp;</p>
+						<h3>super和this关键字+构造方法</h3>
+						<p>super是用于调用父类的，this适用于调用当前类的。</p>
+						<p>&lt;-- 父类--&gt;</p>
+						<pre><code class="language-java" lang="java">package test2;
+
+public class Fu {
+    public int num;
+
+    // 无参构造，见名思意，就是里面不带任何参数
+    Fu() {
+        System.out.println(&quot;构造父类无参&quot;);
+    }
+
+    // 有参构造，见名思意，就是里面含有一个，或一个以上的参数
+    Fu(int num) {
+        System.out.println(&quot;我是父类中的有参构造：&quot; + num);
+    }
+
+    public void test() {
+        System.out.println(&quot;父类方法&quot;);
+    }
+}
+
+</code></pre>
+						<p>&lt;-- 子类--&gt;</p>
+						<pre><code class="language-java" lang="java">package test2;
+
+public class Child extends Fu {
+    public int num;
+
+    // 无参构造，见名思意，就是里面不带任何参数
+    Child() {
+        super();  // 调用父类中的无参构造，必须放最第一行，且只能存在一个
+        System.out.println(&quot;构造子类无参&quot;);
+    }
+
+    // 有参构造，见名思意，就是里面至少含有一个参数
+    Child(int num) {
+        System.out.println(&quot;我是子类中的有参构造：&quot; + num);
+    }
+
+    public void test() {
+        System.out.println(&quot;子类方法&quot;);
+
+    }
+
+    public void aaa() {
+        this.test();  // 调用子类的方法，顺序只影响输出顺序
+        super.test();  // 调用父类的方法，顺序只影响输出顺序
+    }
+}
+
+</code></pre>
+						<p>&lt;-- 测试 --&gt;</p>
+						<p>PS：类中不进行构建的话，是无法传入参数进去的。</p>
+						<pre><code class="language-cmd" lang="cmd">package test2;
+
+public class demo {
+    public static void main(String[] args) {
+        Child child = new Child();  // 不带任何参数，则默认输出无参里面的内容
+        Child child1 = new Child(3);  // 带参数，则把参数传入，再输出
+        Fu fu = new Fu(2);  // 带参数，则把参数传入，再输出
+        child.aaa();
+    }
+}
+
+</code></pre>
+
+						<!-- ↑  博客输入  ↑ -->
+					</div>
+
+					<div class="skip-bottom">
+						<div class="previouPage">
+							<router-link :to="{name:'D302006'}"><img class="img-l"
+																	 src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png"
+																	 alt="左箭头"> <span
+								class="span-txt">数组</span></router-link>
+						</div>
+						<div class="nextPage">
+							<router-link :to="{name:'D302008'}"><span class="span-txt">封装类</span> <img
+								class="img-r"
+								src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png"
+								alt="右箭头">
+							</router-link>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+</template>
+
+<style scoped src="../../../assets/css/data-classify-auto.css"></style>
+<style scoped src="../../../assets/css/markdownpad-github.css"></style>
+<style scoped src="../../../assets/css/prism.css"></style>
+<style scoped src="../../../assets/css/prism-dark.css"></style>
+
+<script>
+
+// import '../../../assets/utils/prism'
+
+export default {
+	name: "302007",
+	data() {
+		return {
+			drawer: false,
+			direction: 'ltr',
+			widthSize: '70%'
+		}
+	}
+}
+</script>
+
+
+
